@@ -1,6 +1,12 @@
 R0CKY GAUGES - dash.ino changelog
 =================================
 
+1.13.1 (2026-11-06)
+-------------------
+
+[หน้าจอ]
+- ย้ายหน้า BOOST & PEAK มาอยู่ถัดจากหน้า DASH (ปัดซ้ายหนึ่งครั้ง) ลำดับหน้าใหม่: DASH, BOOST & PEAK, DEVICES, ALERT LIMITS, COLOR, LOG, TROUBLE CODES, FLASH
+
 1.13.0 (2026-11-06)
 -------------------
 

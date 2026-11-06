@@ -211,7 +211,7 @@
       </nav>
       <p class="mark">R0CKY GAUGES</p>
       <h1>เกจทำอะไรได้บ้าง</h1>
-      <p class="lead">หน้านี้จำลองจอ ESP32-2432S028R ขนาด 320×240 ของเฟิร์มแวร์ 1.13.0 ปัดหน้าจอ เลือกสี แล้วลองสถานการณ์ขับ เพื่อดูค่าไลฟ์ ลิมิต ชิฟต์ไลต์ และกราฟ log</p>
+      <p class="lead">หน้านี้จำลองจอ ESP32-2432S028R ขนาด 320×240 ของเฟิร์มแวร์ 1.13.1 ปัดหน้าจอ เลือกสี แล้วลองสถานการณ์ขับ เพื่อดูค่าไลฟ์ ลิมิต ชิฟต์ไลต์ และกราฟ log</p>
     </header>
     <div class="grid">
       <div>
@@ -335,7 +335,7 @@
       scroll: 0,
       scanning: false,
       fileVer: "",
-      webVer: "1.13.0",
+      webVer: "1.13.1",
       flashUntil: 0,
       shifting: false,
       playing: false,
@@ -588,7 +588,7 @@
       return `${header("FLASH")}
         <div class="panel" style="left:6px;top:28px;width:308px;height:96px">
           <div class="muted" style="position:absolute;left:8px;top:8px;font-size:8px">NOW</div>
-          <div class="acc" style="position:absolute;left:84px;top:6px;font-size:16px;font-weight:700">1.13.0</div>
+          <div class="acc" style="position:absolute;left:84px;top:6px;font-size:16px;font-weight:700">1.13.1</div>
           <div class="muted" style="position:absolute;left:8px;top:30px;font-size:8px">FILE</div>
           <div style="position:absolute;left:84px;top:28px;font-size:16px;font-weight:700;color:${fileCol}">${file}</div>
           <div class="muted" style="position:absolute;left:8px;top:56px;font-size:8px">WEB</div>
@@ -1094,7 +1094,7 @@
         state.color = d;
         render();
       } else if (kind === "download") {
-        state.fileVer = "1.13.0";
+        state.fileVer = "1.13.1";
         state.status = "Saved dash.bin";
         render();
       } else if (kind === "flash") {
