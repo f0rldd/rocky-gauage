@@ -27,7 +27,7 @@
       margin: 0;
       font-size: 13px;
       letter-spacing: 0.22em;
-      color: #ff2a2a;
+      color: #ff8a00;
     }
     h1 { margin: 4px 0 6px; font-size: 32px; letter-spacing: 0.04em; }
     .lead { margin: 0; max-width: 42rem; color: #bdbdbd; }
@@ -176,7 +176,7 @@
       border: 1px solid #333; background: #141414; color: #eee;
       border-radius: 999px; padding: 6px 12px; cursor: pointer; font: inherit; font-size: 14px;
     }
-    .controls button.on, .themes button.on { border-color: #ff2a2a; color: #fff; background: #2a0c0c; }
+    .controls button.on, .themes button.on { border-color: #ff8a00; color: #fff; background: #2a1805; }
     .themes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
     .themes button { display: flex; align-items: center; gap: 8px; }
     .themes s { width: 12px; height: 12px; border-radius: 2px; display: inline-block; text-decoration: none; }
@@ -194,7 +194,7 @@
       color: #eee; text-decoration: none; border: 1px solid #333;
       border-radius: 999px; padding: 6px 14px; font-size: 14px;
     }
-    .site-nav a[aria-current="page"] { border-color: #ff2a2a; background: #2a0c0c; color: #fff; }
+    .site-nav a[aria-current="page"] { border-color: #ff8a00; background: #2a1805; color: #fff; }
     @media (max-width: 1040px) {
       .grid { grid-template-columns: 1fr; }
       h1 { font-size: 26px; }
@@ -211,7 +211,7 @@
       </nav>
       <p class="mark">R0CKY GAUGES</p>
       <h1>เกจทำอะไรได้บ้าง</h1>
-      <p class="lead">หน้านี้จำลองจอ ESP32-2432S028R ขนาด 320×240 ของเฟิร์มแวร์ 1.12.1 ปัดหน้าจอ เลือกสี แล้วลองสถานการณ์ขับ เพื่อดูค่าไลฟ์ ลิมิต ชิฟต์ไลต์ และกราฟ log</p>
+      <p class="lead">หน้านี้จำลองจอ ESP32-2432S028R ขนาด 320×240 ของเฟิร์มแวร์ 1.13.0 ปัดหน้าจอ เลือกสี แล้วลองสถานการณ์ขับ เพื่อดูค่าไลฟ์ ลิมิต ชิฟต์ไลต์ และกราฟ log</p>
     </header>
     <div class="grid">
       <div>
@@ -332,7 +332,7 @@
       scroll: 0,
       scanning: false,
       fileVer: "",
-      webVer: "1.12.1",
+      webVer: "1.13.0",
       flashUntil: 0,
       shifting: false,
       playing: false,
@@ -584,7 +584,7 @@
       return `${header("FLASH")}
         <div class="panel" style="left:6px;top:28px;width:308px;height:96px">
           <div class="muted" style="position:absolute;left:8px;top:8px;font-size:8px">NOW</div>
-          <div class="acc" style="position:absolute;left:84px;top:6px;font-size:16px;font-weight:700">1.12.1</div>
+          <div class="acc" style="position:absolute;left:84px;top:6px;font-size:16px;font-weight:700">1.13.0</div>
           <div class="muted" style="position:absolute;left:8px;top:30px;font-size:8px">FILE</div>
           <div style="position:absolute;left:84px;top:28px;font-size:16px;font-weight:700;color:${fileCol}">${file}</div>
           <div class="muted" style="position:absolute;left:8px;top:56px;font-size:8px">WEB</div>
@@ -1003,7 +1003,7 @@
         state.color = d;
         render();
       } else if (kind === "download") {
-        state.fileVer = "1.12.1";
+        state.fileVer = "1.13.0";
         state.status = "Saved dash.bin";
         render();
       } else if (kind === "flash") {
