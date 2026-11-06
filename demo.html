@@ -234,7 +234,7 @@
           <div class="themes" id="colors"></div>
         </section>
         <section class="block">
-          <h2>หกหน้าบนจอ</h2>
+          <h2>เจ็ดหน้าบนจอ</h2>
           <ul class="cap">
             <li><b>ไลฟ์</b> แถบรอบ 0–12 คูณพัน ความเร็วใหญ่ตรงกลาง คันเร่งในกรอบเอียง แถวล่างน้ำ แบต MAP ชิฟต์ไลต์ 5 ดวงด้านบน</li>
             <li><b>อุปกรณ์</b> กด SCAN ได้ทั้ง BLE และ Wi-Fi ในรายการเดียว แตะชื่อเพื่อต่อทันที Wi-Fi ที่ล็อกเปิดแป้นรหัส</li>
@@ -242,6 +242,7 @@
             <li><b>สี</b> แดง ขาว น้ำเงิน ส้ม เหลือง ชมพู</li>
             <li><b>แฟลช</b> เช็คเว็บ ดาวน์โหลด dash.bin ลงการ์ด แล้วกดยืนยันภายใน 8 วินาที รุ่นที่ใช้อยู่แสดงที่ช่อง NOW</li>
             <li><b>ล็อก</b> เปิดไฟล์ log ในการ์ดดูบนจอ รายการไฟล์ใหม่สุดก่อน แตะชื่อไฟล์เพื่อดูกราฟทีละค่า กด &lt; &gt; ด้านบนเปลี่ยนค่า ปุ่มกลางซูม ALL 60s 30s 10s แล้วกด &lt; &gt; ด้านล่างเลื่อนช่วงเวลา ช่วงที่ ELM หลุดกราฟจะขาด ไฟล์ที่มีป้าย REC คือไฟล์ที่กำลังบันทึกค่าจากหน้าจำลองนี้อยู่</li>
+            <li><b>บูสต์และค่าสูงสุด</b> บูสต์เป็น bar (ค่า MAP ลบ 101 kPa ติดลบคือสุญญากาศ) พร้อมค่าบูสต์สูงสุด เก็บค่าสูงสุดของรอบ ความเร็ว และอุณหภูมิน้ำ จับเวลา 0-100 กม./ชม. ให้เอง หยุดรถให้ขึ้น READY แล้วออกตัว ลองเลือก "เร่ง" จากสถานการณ์ใต้จอ กด RESET เพื่อล้างค่า</li>
           </ul>
         </section>
         <section class="block">
@@ -267,8 +268,10 @@
       { name: "YELLOW", accent: "#ffff00", primary: "#424100", ink: "#000000" },
       { name: "PINK", accent: "#ff2dff", primary: "#7b0042", ink: "#000000" }
     ];
-    const PAGE_COUNT = 6;
-    const PAGE_TH = ["ไลฟ์", "อุปกรณ์", "ลิมิตแจ้งเตือน", "สี", "แฟลช", "ล็อก"];
+    const PAGE_COUNT = 7;
+    const PAGE_PEAK = 6;
+    const BARO_KPA = 101;
+    const PAGE_TH = ["ไลฟ์", "อุปกรณ์", "ลิมิตแจ้งเตือน", "สี", "แฟลช", "ล็อก", "บูสต์และค่าสูงสุด"];
     const SET_LABELS = ["ENGINE RPM", "SPEED km/h", "COOLANT C", "THROTTLE %", "MAP kPa", "BATTERY V", "FUEL %"];
     const SHIFT_NAMES = ["SHIFT", "SPEED", "COOLANT", "THROTTLE", "MAP", "BATTERY", "FUEL"];
     const SCENES = [
@@ -338,7 +341,8 @@
       playing: false,
       playAt: 0,
       log: { listPage: 0, showGraph: false, openNum: 0, metric: 0, zoom: 0, winStart: 0, g: null },
-      logAt: 0
+      logAt: 0,
+      peak: { rpm: NaN, spd: NaN, clt: NaN, boost: NaN, zs: 0, last: 0, best: 0, start: 0 }
     };
 
     const lcd = document.getElementById("lcd");
@@ -874,7 +878,91 @@
         ? [Math.round(s.rpm + jit(30)), Math.round(s.spd), Math.round(s.clt), Math.round(s.tps * 10) / 10, Math.round(s.map), Math.round((s.v + jit(0.1)) * 10) / 10]
         : [NaN, NaN, NaN, NaN, NaN, NaN] });
     }
-    const PAGES = [livePage, devicesPage, alertPage, colorPage, flashPage, logPage];
+    // BOOST & PEAK page: same layout as drawPeakPage in dash.ino. Boost = MAP - 101 kPa.
+    function pkBar(kpa) { return Number.isFinite(kpa) ? (kpa / 100).toFixed(2) : "--"; }
+    function pkInt(v) { return Number.isFinite(v) ? String(Math.round(v)) : "--"; }
+    function pkSecs(s) { return s > 0 ? s.toFixed(1) : "--"; }
+    function pkZeroRunning() { return state.peak.zs === 2 ? (performance.now() - state.peak.start) / 1000 : 0; }
+    function pkZero() {
+      const p = state.peak;
+      if (p.zs === 2) return { big: pkSecs(pkZeroRunning()), hint: "GO!" };
+      if (p.zs === 3) return { big: pkSecs(p.last), hint: "DONE" };
+      if (p.zs === 1) return { big: "0.0", hint: "READY" };
+      return { big: "--", hint: "STOP TO ARM" };
+    }
+    function peakTrack() {
+      const p = state.peak;
+      const s = state.shown;
+      if (!state.online) return;
+      if (!Number.isFinite(p.rpm) || s.rpm > p.rpm) p.rpm = s.rpm;
+      if (!Number.isFinite(p.spd) || s.spd > p.spd) p.spd = s.spd;
+      if (!Number.isFinite(p.clt) || s.clt > p.clt) p.clt = s.clt;
+      const b = s.map - BARO_KPA;
+      if (!Number.isFinite(p.boost) || b > p.boost) p.boost = b;
+      const v = Math.round(s.spd);
+      if (v <= 0) p.zs = 1;
+      else if (p.zs === 1) { p.zs = 2; p.start = performance.now(); }
+      else if (p.zs === 2 && v >= 100) {
+        p.last = (performance.now() - p.start) / 1000;
+        if (p.best <= 0 || p.last < p.best) p.best = p.last;
+        p.zs = 3;
+      }
+    }
+    function peakReset() {
+      state.peak = { rpm: NaN, spd: NaN, clt: NaN, boost: NaN, zs: 0, last: 0, best: 0, start: 0 };
+    }
+    function peakPage() {
+      const p = state.peak;
+      const on = state.online;
+      const b = on ? state.shown.map - BARO_KPA : NaN;
+      const z = pkZero();
+      const num = "font-family:DSEG7,Anton,Arial Black,sans-serif;line-height:1";
+      const names = ["PEAK RPM", "PEAK SPEED", "PEAK WATER"];
+      const vals3 = [p.rpm, p.spd, p.clt];
+      let cards = "";
+      for (let i = 0; i < 3; i++) {
+        cards += `<div class="panel" style="left:${6 + i * 106}px;top:120px;width:100px;height:60px;background:var(--surface)">
+          <div class="muted" style="position:absolute;left:8px;top:5px;font-size:8px">${names[i]}</div>
+          <div id="pk-v${i}" style="position:absolute;left:8px;top:20px;font-size:22px;font-weight:700;color:#fff">${pkInt(vals3[i])}</div>
+        </div>`;
+      }
+      return `${header("BOOST & PEAK")}
+        <div class="panel" style="left:6px;top:28px;width:200px;height:84px;background:var(--surface)">
+          <div class="muted" style="position:absolute;left:6px;top:4px;font-size:11px">BOOST bar</div>
+          <div id="pk-boost" style="position:absolute;left:6px;top:22px;width:188px;height:44px;display:flex;align-items:center;${num};font-size:40px;color:${b > 0 ? "var(--accent)" : "#fff"}">${pkBar(b)}</div>
+          <div id="pk-bpeak" class="muted" style="position:absolute;left:6px;top:68px;font-size:8px">PEAK ${pkBar(p.boost)}</div>
+        </div>
+        <div class="panel" style="left:212px;top:28px;width:102px;height:84px;background:var(--surface)">
+          <div class="muted" style="position:absolute;left:6px;top:4px;font-size:8px">0-100 km/h</div>
+          <div id="pk-zero" style="position:absolute;left:0;top:18px;width:90px;height:34px;display:flex;align-items:center;justify-content:center;${num};font-size:28px;color:${p.zs === 3 ? "#00ff00" : "#fff"}">${z.big}</div>
+          <div id="pk-hint" class="muted" style="position:absolute;left:0;top:56px;width:102px;text-align:center;font-size:8px;color:${p.zs === 2 ? "#ffa500" : "var(--muted)"}">${z.hint}</div>
+          <div id="pk-best" class="muted" style="position:absolute;left:6px;top:70px;font-size:8px">BEST ${pkSecs(p.best)}</div>
+        </div>
+        ${cards}
+        <button class="ab surface" style="left:218px;top:196px;width:96px;height:32px;font-size:13px" data-act="pk-reset">RESET</button>
+        <div class="muted" style="position:absolute;left:7px;top:200px;font-size:8px">Boost = MAP - 101 kPa</div>
+        <div class="muted" style="position:absolute;left:7px;top:212px;font-size:8px">Tap RESET to clear</div>`;
+    }
+    // Update the numbers in place so a tap on RESET is never lost to a re-render.
+    function peakRefresh() {
+      const p = state.peak;
+      const set = (id, t) => { const el = document.getElementById(id); if (el && el.textContent !== t) el.textContent = t; };
+      const b = state.online ? state.shown.map - BARO_KPA : NaN;
+      const z = pkZero();
+      set("pk-boost", pkBar(b));
+      const bo = document.getElementById("pk-boost");
+      if (bo) bo.style.color = b > 0 ? "var(--accent)" : "#fff";
+      set("pk-bpeak", "PEAK " + pkBar(p.boost));
+      set("pk-zero", z.big);
+      const zo = document.getElementById("pk-zero");
+      if (zo) zo.style.color = p.zs === 3 ? "#00ff00" : "#fff";
+      set("pk-hint", z.hint);
+      const hi = document.getElementById("pk-hint");
+      if (hi) hi.style.color = p.zs === 2 ? "#ffa500" : "var(--muted)";
+      set("pk-best", "BEST " + pkSecs(p.best));
+      [p.rpm, p.spd, p.clt].forEach((v, i) => set("pk-v" + i, pkInt(v)));
+    }
+    const PAGES = [livePage, devicesPage, alertPage, colorPage, flashPage, logPage, peakPage];
 
 
     function paintChrome() {
@@ -909,7 +997,7 @@
       state.targets = { rpm: s.rpm, spd: s.spd, clt: s.clt, tps: s.tps, map: s.map, v: s.v, fuel: s.fuel };
       if (!s.online) state.status = "DISCONNECTED";
       else if (state.status === "DISCONNECTED") state.status = "CONNECTED";
-      if (state.page !== 0) state.page = 0;
+      if (state.page !== 0 && state.page !== PAGE_PEAK) state.page = 0;
       render();
     }
     function act(el) {
@@ -998,6 +1086,9 @@
       } else if (kind === "lim") {
         const i = Number(el.dataset.i);
         state.limits[i] = clampLimit(i, state.limits[i] + stepOf(i) * d);
+        render();
+      } else if (kind === "pk-reset") {
+        peakReset();
         render();
       } else if (kind === "color") {
         state.color = d;
@@ -1100,6 +1191,8 @@
           state.shown[k] += (state.targets[k] - state.shown[k]) * a;
         }
       }
+      peakTrack();
+      if (state.page === PAGE_PEAK && !state.wifiKey) peakRefresh();
       if (now - state.logAt >= 500) {
         state.logAt = now;
         logRecordLive();
