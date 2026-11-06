@@ -270,9 +270,9 @@
       { name: "PINK", accent: "#ff2dff", primary: "#7b0042", ink: "#000000" }
     ];
     const PAGE_COUNT = 7;
-    const PAGE_PEAK = 6;
+    const PAGE_PEAK = 1;
     const BARO_KPA = 101;
-    const PAGE_TH = ["ไลฟ์", "อุปกรณ์", "ลิมิตแจ้งเตือน", "สี", "แฟลช", "ล็อก", "บูสต์และค่าสูงสุด"];
+    const PAGE_TH = ["ไลฟ์", "บูสต์และค่าสูงสุด", "อุปกรณ์", "ลิมิตแจ้งเตือน", "สี", "แฟลช", "ล็อก"];
     const SET_LABELS = ["ENGINE RPM", "SPEED km/h", "COOLANT C", "THROTTLE %", "MAP kPa", "BATTERY V", "FUEL %"];
     const SHIFT_NAMES = ["SHIFT", "SPEED", "COOLANT", "THROTTLE", "MAP", "BATTERY", "FUEL"];
     const SCENES = [
@@ -963,7 +963,7 @@
       set("pk-best", "BEST " + pkSecs(p.best));
       [p.rpm, p.spd, p.clt].forEach((v, i) => set("pk-v" + i, pkInt(v)));
     }
-    const PAGES = [livePage, devicesPage, alertPage, colorPage, flashPage, logPage, peakPage];
+    const PAGES = [livePage, peakPage, devicesPage, alertPage, colorPage, flashPage, logPage];
 
 
     function paintChrome() {
@@ -1028,14 +1028,14 @@
         render();
         setTimeout(() => {
           state.status = "Scanning WiFi...";
-          if (state.page === 1 && !state.wifiKey) render();
+          if (state.page === 2 && !state.wifiKey) render();
           setTimeout(() => {
             state.scanning = false;
             state.devices = DEVICES.slice();
             state.picked = -1;
             state.scroll = 0;
             state.status = "Found " + state.devices.length + " - tap a name";
-            if (state.page === 1 && !state.wifiKey) render();
+            if (state.page === 2 && !state.wifiKey) render();
           }, 350);
         }, 350);
       } else if (kind === "pick") {
@@ -1149,14 +1149,14 @@
       const fromBtn = pointer.btn;
       pointer = null;
       if (state.wifiKey) { pointer = null; return; }
-      if (state.page === 1 && !fromBtn && Math.abs(dy) >= 28 && Math.abs(dy) > Math.abs(dx) * 1.2) {
+      if (state.page === 2 && !fromBtn && Math.abs(dy) >= 28 && Math.abs(dy) > Math.abs(dx) * 1.2) {
         ignoreClick = true;
         const max = Math.max(0, state.devices.length - 4);
         state.scroll = Math.max(0, Math.min(max, state.scroll + (dy < 0 ? 1 : -1)));
         render();
         return;
       }
-      if (state.page === 5 && !state.log.showGraph && Math.abs(dy) >= 28 && Math.abs(dy) > Math.abs(dx) * 1.2) {
+      if (state.page === 6 && !state.log.showGraph && Math.abs(dy) >= 28 && Math.abs(dy) > Math.abs(dx) * 1.2) {
         ignoreClick = true;
         state.log.listPage += dy < 0 ? 1 : -1;
         render();
@@ -1245,7 +1245,7 @@
           }
         }
       }
-      if (state.page === 4 && state.flashUntil && state.flashUntil <= now) {
+      if (state.page === 5 && state.flashUntil && state.flashUntil <= now) {
         state.flashUntil = 0;
         state.status = "Confirm timed out";
         render();
