@@ -7,7 +7,7 @@
   <meta name="description" content="เกจดิจิทัลต่อ OBD2 ผ่าน ELM327 (WiFi / BLE) แสดงรอบ ความเร็ว น้ำ คันเร่ง MAP แบตเตอรี่ บนจอสัมผัส เตือนรอบ อ่านโค้ดเสีย บันทึกล็อกเซ็นและเข้ารหัส อัพเดทเฟิร์มแวร์ผ่านเว็บ">
   <meta property="og:title" content="R0CKY GAUGES — เกจดิจิทัล OBD2">
   <meta property="og:description" content="เกจดิจิทัลจอสัมผัส ต่อ ELM327 ไร้สาย บันทึกล็อกเซ็นและเข้ารหัส อัพเดทผ่านเว็บ">
-  <meta property="og:image" content="img/dash35-orange.png">
+  <meta property="og:image" content="img/dash35-dash.png">
   <meta name="theme-color" content="#070707">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,6 +121,8 @@
     }
     .swatches button:hover { transform: scale(1.15); }
     .swatches button[aria-pressed="true"] { border-color: #fff; }
+    .swatches button.size { width: auto; height: auto; border-radius: 999px; padding: 6px 16px; background: #1c1c20; color: #fff; font: inherit; font-weight: 700; }
+    .swatches button.size[aria-pressed="true"] { background: #ff8c00; color: #140c00; border-color: #ff8c00; }
 
     /* ---------- stats ---------- */
     .stats { border-block: 1px solid var(--line); background: linear-gradient(180deg, rgba(255,255,255,0.025), transparent); }
@@ -285,15 +287,11 @@
           </div>
         </div>
         <div class="device-stage">
-          <div class="device"><div class="screen"><img id="heroShot" src="img/dash35-orange.png" width="480" height="320" alt="หน้าจอ DASH ของเกจจอ 3.5 นิ้ว"></div></div>
-          <div class="swatches" role="group" aria-label="เลือกสีธีม">
-            <span>สีธีม</span>
-            <button style="background:#ff1a1a" data-img="red" aria-label="แดง" aria-pressed="false"></button>
-            <button style="background:#ffffff" data-img="white" aria-label="ขาว" aria-pressed="false"></button>
-            <button style="background:#4a78ff" data-img="blue" aria-label="น้ำเงิน" aria-pressed="false"></button>
-            <button style="background:#ff9a1f" data-img="orange" aria-label="ส้ม" aria-pressed="true"></button>
-            <button style="background:#ffe81a" data-img="yellow" aria-label="เหลือง" aria-pressed="false"></button>
-            <button style="background:#ff6fb4" data-img="pink" aria-label="ชมพู" aria-pressed="false"></button>
+          <div class="device"><div class="screen" id="heroScreen"><img id="heroShot" src="img/dash35-dash.png" width="480" height="320" alt="หน้าจอ DASH ของเกจจอ 3.5 นิ้ว"></div></div>
+          <div class="swatches" role="group" aria-label="เลือกขนาดจอ">
+            <span>ขนาดจอ</span>
+            <button class="size" data-img="img/dash35-dash.png" data-ratio="3 / 2" data-alt="หน้าจอ DASH ของเกจจอ 3.5 นิ้ว" aria-pressed="true">3.5"</button>
+            <button class="size" data-img="img/dash28-dash.png" data-ratio="4 / 3" data-alt="หน้าจอ DASH ของเกจจอ 2.8 นิ้ว" aria-pressed="false">2.8"</button>
           </div>
         </div>
       </div>
@@ -302,7 +300,7 @@
     <div class="stats">
       <div class="wrap">
         <div class="stat"><b>6</b><span>ค่าจากรถแบบสด</span></div>
-        <div class="stat"><b>6</b><span>สีธีมให้เลือก</span></div>
+        <div class="stat"><b>7</b><span>หน้าจอ ปัดเปลี่ยนหน้า</span></div>
         <div class="stat"><b>2</b><span>ขนาดจอ 2.8" และ 3.5"</span></div>
         <div class="stat"><b>OTA</b><span>อัพเดทผ่านเว็บหรือการ์ด SD</span></div>
       </div>
@@ -354,8 +352,8 @@
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="12" cy="16" r="3"/></svg></div>
-            <h3>6 สีธีม</h3>
-            <p>แดง ขาว น้ำเงิน ส้ม เหลือง ชมพู เปลี่ยนสีทั้งหน้าจอได้ในการแตะเดียว ให้เข้ากับไฟหน้าปัดรถของคุณ</p>
+            <h3>อ่านง่ายในพริบตา</h3>
+            <p>หน้า DASH เป็นการ์ด 6 ช่อง ตัวเลขใหญ่ แต่ละค่ามีสีของตัวเอง หน้าตาเรียบ ไม่รก จอ 2.8" และ 3.5" หน้าตาเหมือนกันทุกหน้า</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h3l2-6 4 12 2-6h5"/></svg></div>
@@ -371,24 +369,28 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="eyebrow">On Screen</span>
-          <h2>หน้าจอจริงจากเกจจอ 3.5 นิ้ว</h2>
-          <p>ทั้งหมดนี้คือภาพที่จับจากหน้าจอของบอร์ดจริง ไม่ใช่ภาพตกแต่ง (ค่าตัวอย่างจากโหมดสาธิต) ปัดซ้าย-ขวาเพื่อเปลี่ยนหน้า จอ 2.8" ใช้หน้าตาแบบเดียวกัน</p>
+          <h2>หน้าจอจริงจากเกจทั้งสองขนาด</h2>
+          <p>ทั้งหมดนี้คือภาพที่จับจากหน้าจอของบอร์ดจริง ไม่ใช่ภาพตกแต่ง (จอ 3.5" ใช้ค่าตัวอย่างจากโหมดสาธิต จอ 2.8" ต่อรถจำลองอยู่) ปัดซ้าย-ขวาเพื่อเปลี่ยนหน้า</p>
         </div>
         <div class="gallery">
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-orange.png" width="480" height="320" alt="หน้า DASH สีส้ม"></div>
-            <figcaption><b>DASH</b>วงวัดรอบแบบโค้งแบ่งช่อง ช่วงรอบสูงเรืองแสง ความเร็วกลางวง ไฟ shift light และการ์ดบูสต์ น้ำ แบต คันเร่ง</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-peak.png" width="480" height="320" alt="หน้า BOOST &amp; PEAK"></div>
-            <figcaption><b>BOOST &amp; PEAK</b>บูสต์เป็นวงโค้ง ช่วงสุญญากาศสีฟ้า ขีดแดงบอกบูสต์สูงสุด ค่าสูงสุดของรอบ ความเร็ว น้ำ และจับเวลา 0-100</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-limits.png" width="480" height="320" alt="หน้า ALERT LIMITS"></div>
-            <figcaption><b>ALERT LIMITS</b>ตั้งค่าเตือนแต่ละค่า เห็นระดับเป็นแถบ และปรับความเร็วให้ตรงมาตรวัด</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dtc.png" width="480" height="320" alt="หน้า TROUBLE CODES"></div>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dash.png" width="480" height="320" alt="หน้า DASH จอ 3.5 นิ้ว"></div>
+            <figcaption><b>DASH</b>การ์ด 6 ช่อง ความเร็ว รอบ บูสต์ คันเร่ง น้ำ แบต ตัวเลขใหญ่ อ่านง่ายตอนขับ</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-peak.png" width="480" height="320" alt="หน้า BOOST &amp; PEAK จอ 3.5 นิ้ว"></div>
+            <figcaption><b>BOOST &amp; PEAK</b>บูสต์เป็น bar พร้อมค่าสูงสุด จับเวลา 0-100 และค่าสูงสุดของรอบ ความเร็ว น้ำ</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-limits.png" width="480" height="320" alt="หน้า ALERT LIMITS จอ 3.5 นิ้ว"></div>
+            <figcaption><b>ALERT LIMITS</b>ตั้งค่าเตือนแต่ละค่า เกินเมื่อไหร่จอเป็นสีแดงเต็มจอ และปรับความเร็วให้ตรงมาตรวัด</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dtc.png" width="480" height="320" alt="หน้า TROUBLE CODES จอ 3.5 นิ้ว"></div>
             <figcaption><b>TROUBLE CODES</b>อ่าน STORED / PENDING บอกระบบที่โค้ดเกี่ยว และล้างโค้ดเสียได้จากหน้าจอ</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-color.png" width="480" height="320" alt="หน้าเลือกสีธีม"></div>
-            <figcaption><b>COLOR</b>เลือกสีธีม 6 สีให้เข้ากับรถ เห็นตัวอย่างหน้าปัดในสีนั้นก่อนเลือก</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-blue.png" width="480" height="320" alt="หน้า DASH สีน้ำเงิน"></div>
-            <figcaption><b>ธีมน้ำเงิน</b>วงวัดรอบ ไฟ shift light และตัวเลขรอบเปลี่ยนสีตามที่เลือก</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-yellow.png" width="480" height="320" alt="หน้า DASH สีเหลือง"></div>
-            <figcaption><b>ธีมเหลือง</b>ช่วงรอบสูงเรืองแสงเป็นสีเหลือง</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-system.png" width="480" height="320" alt="หน้า SYSTEM จอ 3.5 นิ้ว"></div>
+            <figcaption><b>SYSTEM</b>เทียบรุ่นเฟิร์มแวร์ในเครื่อง ในการ์ด และบนเว็บ ดาวน์โหลดแล้วแฟลชจากหน้าจอได้เลย</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-dash.png" width="640" height="480" alt="หน้า DASH จอ 2.8 นิ้ว"></div>
+            <figcaption><b>DASH จอ 2.8"</b>หน้าตาเดียวกับจอ 3.5" ตัวอักษรแบบพิกเซลคมชัดบนจอขนาดเล็ก</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-peak.png" width="640" height="480" alt="หน้า BOOST &amp; PEAK จอ 2.8 นิ้ว"></div>
+            <figcaption><b>BOOST &amp; PEAK จอ 2.8"</b>ค่าสดขณะต่อรถ พร้อมเวลา 0-100 ที่จับได้</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-graph.png" width="640" height="480" alt="หน้า LOG GRAPH จอ 2.8 นิ้ว"></div>
+            <figcaption><b>LOG GRAPH จอ 2.8"</b>เปิดไฟล์ล็อกในการ์ด SD ดูกราฟรอบ ความเร็ว น้ำ และค่าต่ำสุด เฉลี่ย สูงสุด บนเกจได้เลย</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-limits.png" width="640" height="480" alt="หน้า ALERT LIMITS จอ 2.8 นิ้ว"></div>
+            <figcaption><b>ALERT LIMITS จอ 2.8"</b>ปุ่ม - / + ใหญ่ กดง่ายบนจอสัมผัส</figcaption></figure>
         </div>
       </div>
     </section>
@@ -552,16 +554,14 @@
       });
       menu.addEventListener("click", function (e) { if (e.target.tagName === "A") { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); } });
 
-      // hero colour picker
-      const hero = document.getElementById("heroShot"), glow = {
-        red: "255,42,42", white: "255,255,255", blue: "74,120,255", orange: "255,154,31", yellow: "255,232,26", pink: "255,111,180"
-      };
-      document.querySelectorAll(".swatches button").forEach(function (b) {
+      // hero screen size: 3.5" (3:2) or 2.8" (4:3)
+      const hero = document.getElementById("heroShot"), heroScreen = document.getElementById("heroScreen");
+      document.querySelectorAll(".swatches button.size").forEach(function (b) {
         b.addEventListener("click", function () {
-          const c = b.dataset.img;
-          hero.src = "img/dash35-" + c + ".png";
-          document.querySelectorAll(".swatches button").forEach(function (o) { o.setAttribute("aria-pressed", o === b); });
-          document.documentElement.style.setProperty("--glow", "rgba(" + glow[c] + ", 0.35)");
+          hero.src = b.dataset.img;
+          hero.alt = b.dataset.alt;
+          heroScreen.style.aspectRatio = b.dataset.ratio;
+          document.querySelectorAll(".swatches button.size").forEach(function (o) { o.setAttribute("aria-pressed", o === b); });
         });
       });
 
