@@ -194,6 +194,17 @@
     .viewer svg { display: block; width: 100%; height: auto; background: #1b1b1e; }
 
     .faq { max-width: 52rem; display: grid; gap: 10px; }
+    .vals-note { color: var(--muted); margin: 0 0 22px; max-width: 52rem; }
+    .vals-note b { color: #fff; font-weight: 600; }
+    .vals-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+    .vals { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 15px; }
+    .vals th, .vals td { text-align: left; padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+    .vals thead th { border-top: 0; font-size: 13px; font-weight: 600; color: var(--muted); }
+    .vals tr.grp th { font-size: 14px; font-weight: 600; color: var(--accent); background: rgba(255,255,255,0.025); }
+    .vals td:first-child { font: 600 15px/1.3 "Oswald", sans-serif; letter-spacing: .04em; color: #fff; white-space: nowrap; }
+    .vals td small { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; }
+    .vals code { font-size: 13px; color: var(--accent2); white-space: nowrap; }
+    .vals .def { display: inline-block; margin-left: 6px; font: 600 10px/1 "Oswald", sans-serif; letter-spacing: .1em; padding: 3px 6px; border-radius: 6px; background: var(--accent); color: #fff; vertical-align: 2px; }
     details { border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
     details[open] { border-color: var(--line2); background: rgba(255,255,255,0.05); }
     summary { cursor: pointer; list-style: none; padding: 18px 22px; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
@@ -255,6 +266,7 @@
       <a class="logo" href="#top" aria-label="R0CKY GAUGES"><i>R</i>R0CKY GAUGES</a>
       <nav class="menu" id="menu" aria-label="เมนูหลัก">
         <a href="#features">จุดเด่น</a>
+        <a href="#values">ค่าที่อ่านได้</a>
         <a href="#gallery">หน้าจอ</a>
         <a href="#models">รุ่น</a>
         <a href="#logviewer">ล็อก</a>
@@ -275,7 +287,7 @@
         <div>
           <span class="eyebrow">OBD2 Digital Gauge</span>
           <h1>เกจดิจิทัล<br><span class="grad">ให้รถคุณ</span><br>ดูข้อมูลจริง</h1>
-          <p class="lead">ต่อกับ ELM327 ไร้สาย (WiFi หรือ Bluetooth LE) แสดงรอบเครื่อง ความเร็ว อุณหภูมิน้ำ คันเร่ง MAP และแบตเตอรี่แบบเรียลไทม์บนจอสัมผัส เตือนเมื่อเกินลิมิต อ่านโค้ดเสีย และบันทึกล็อกที่เซ็นและเข้ารหัสไว้ดูบนพีซี</p>
+          <p class="lead">ต่อกับ ELM327 ไร้สาย (WiFi หรือ Bluetooth LE) แสดงรอบเครื่อง ความเร็ว MAP บูสต์ อุณหภูมิน้ำ และอีกกว่า 20 ค่าแบบเรียลไทม์บนจอสัมผัส เตือนเมื่อเกินลิมิต อ่านโค้ดเสีย และบันทึกล็อกที่เซ็นและเข้ารหัสไว้ดูบนพีซี</p>
           <div class="cta">
             <a class="btn primary" href="#contact">สั่งซื้อ / สอบถามราคา</a>
             <a class="btn ghost" href="demo.html">ลองสาธิตบนเว็บ →</a>
@@ -299,7 +311,7 @@
 
     <div class="stats">
       <div class="wrap">
-        <div class="stat"><b>6</b><span>ค่าจากรถแบบสด</span></div>
+        <div class="stat"><b>25</b><span>ค่าให้เลือกแสดงบนจอ</span></div>
         <div class="stat"><b>7</b><span>หน้าจอ ปัดเปลี่ยนหน้า</span></div>
         <div class="stat"><b>2</b><span>ขนาดจอ 2.8" และ 3.5"</span></div>
         <div class="stat"><b>OTA</b><span>อัพเดทผ่านเว็บหรือการ์ด SD</span></div>
@@ -317,8 +329,8 @@
         <div class="features">
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4-6"/><circle cx="12" cy="18" r="1.4"/></svg></div>
-            <h3>ค่าสดจากรถ 6 ตัว</h3>
-            <p>รอบเครื่อง ความเร็ว อุณหภูมิน้ำ ตำแหน่งคันเร่ง MAP และแรงดันแบตเตอรี่ อัพเดทต่อเนื่อง ปรับความเร็วให้ตรงกับมาตรวัดรถได้</p>
+            <h3>เลือกได้ 25 ค่า</h3>
+            <p>รอบ ความเร็ว MAP คันเร่ง น้ำ แบต อัพเดทเร็วที่สุด และเลือกค่าอื่นได้อีก เช่น บูสต์ ไทมิ่ง AFR น้ำมันเครื่อง fuel trim อากาศเข้า ดู<a href="#values" style="color:var(--accent)">ตารางค่าทั้งหมด</a></p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".6"/></svg></div>
@@ -338,7 +350,7 @@
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
             <h3>บันทึกล็อกลงการ์ด SD</h3>
-            <p>บันทึกทุกครึ่งวินาทีขณะขับ เก็บไทมิ่ง AFR และ injector duty ด้วย ไฟล์ล็อกเซ็นลายเซ็นดิจิทัลและเข้ารหัส ตรวจได้ว่าไม่ถูกแก้</p>
+            <p>บันทึกทุกครึ่งวินาทีขณะขับ เก็บทุกค่าที่รถรองรับ (สูงสุด 24 ค่า) ไม่ว่าจะแสดงบนจอหรือไม่ ไฟล์ล็อกเซ็นลายเซ็นดิจิทัลและเข้ารหัส ตรวจได้ว่าไม่ถูกแก้</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.2 15.5a5.6 5.6 0 0 1 7.6 0"/><circle cx="12" cy="18.5" r="1.2"/></svg></div>
@@ -353,7 +365,7 @@
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="12" cy="16" r="3"/></svg></div>
             <h3>อ่านง่ายในพริบตา</h3>
-            <p>หน้า DASH เป็นการ์ด 6 ช่อง ตัวเลขใหญ่ แต่ละค่ามีสีของตัวเอง หน้าตาเรียบ ไม่รก จอ 2.8" และ 3.5" หน้าตาเหมือนกันทุกหน้า</p>
+            <p>หน้า DASH เป็นการ์ด 9 ช่อง ตัวเลขใหญ่ แต่ละช่องมีสีของตัวเอง กดค้างที่การ์ดเพื่อเปลี่ยนค่าที่แสดง จอ 2.8" และ 3.5" หน้าตาเหมือนกันทุกหน้า</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h3l2-6 4 12 2-6h5"/></svg></div>
@@ -361,6 +373,54 @@
             <p>R0CKY LogViewer เปิดไฟล์ล็อกได้หลายไฟล์พร้อมกัน ซ้อนกราฟ ดูตาราง เล่นย้อนหลัง และตรวจลายเซ็นของไฟล์ ธีมมืดเต็มจอ</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- ================= VALUES ================= -->
+    <section class="block" id="values">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Readings</span>
+          <h2>ค่าที่อ่านได้ และแต่ละค่าคืออะไร</h2>
+          <p>หน้า DASH มีการ์ด 9 ช่อง <b style="color:#fff">กดค้างที่การ์ดประมาณครึ่งวินาที</b> แล้วเลือกได้ว่าการ์ดนั้นแสดงค่าไหนจาก 25 ค่าด้านล่าง เกจจำค่าที่เลือกไว้ ปิดเปิดใหม่ก็ยังอยู่</p>
+        </div>
+        <p class="vals-note reveal">ป้าย <span style="font:600 10px/1 Oswald,sans-serif;letter-spacing:.1em;padding:3px 6px;border-radius:6px;background:var(--accent);color:#fff">DASH</span> คือค่าที่การ์ดแสดงตอนเริ่มต้น · <b>ล็อก</b> บันทึกทุกค่าที่รถรองรับลงการ์ด SD เสมอ ไม่ว่าจะแสดงบนจอหรือไม่ (ยกเว้น BOOST ที่คำนวณจาก MAP ได้ภายหลัง) · คอลัมน์ "ชื่อในล็อก" คือชื่อช่องใน R0CKY LogViewer</p>
+        <div class="vals-wrap reveal">
+          <table class="vals">
+            <thead><tr><th>บนจอ</th><th>คืออะไร</th><th>หน่วย</th><th>คำสั่ง OBD</th><th>ชื่อในล็อก</th></tr></thead>
+            <tbody>
+                <tr class="grp"><th colspan="5">6 ค่าหลัก อ่านตลอดเวลา อัพเดทเร็วที่สุด · รถแทบทุกคันมี</th></tr>
+                <tr><td>SPEED<span class="def">DASH</span></td><td>ความเร็วรถ<small>ปรับให้ตรงกับมาตรวัดรถได้ที่หน้า ALERT LIMITS (SPEED CAL)</small></td><td>km/h</td><td><code>010D</code></td><td><code>SPEED</code></td></tr>
+                <tr><td>RPM<span class="def">DASH</span></td><td>รอบเครื่องยนต์<small>ตัวเลขเป็นสีแดงเมื่อถึง 90% ของรอบที่ตั้งเตือน</small></td><td>rpm</td><td><code>010C</code></td><td><code>RPM</code></td></tr>
+                <tr><td>MAP<span class="def">DASH</span></td><td>แรงดันสัมบูรณ์ในท่อร่วมไอดี<small>ดับเครื่องประมาณ 100 · เดินเบาประมาณ 30–40 · เกิน 101 คือมีบูสต์</small></td><td>kPa</td><td><code>010B</code></td><td><code>MAP</code></td></tr>
+                <tr><td>THROTTLE<span class="def">DASH</span></td><td>ตำแหน่งลิ้นปีกผีเสื้อ</td><td>%</td><td><code>0111</code></td><td><code>TPS</code></td></tr>
+                <tr><td>COOLANT<span class="def">DASH</span></td><td>อุณหภูมิน้ำหล่อเย็น</td><td>°C</td><td><code>0105</code></td><td><code>COOLANT</code></td></tr>
+                <tr><td>BATT<span class="def">DASH</span></td><td>แรงดันไฟที่ ECU วัดได้<small>เครื่องติดปกติประมาณ 13.5–14.5</small></td><td>V</td><td><code>0142</code></td><td><code>VOLT</code></td></tr>
+                <tr class="grp"><th colspan="5">คำนวณจากค่าหลัก</th></tr>
+                <tr><td>BOOST<span class="def">DASH</span></td><td>แรงดันบูสต์ = MAP − 101 kPa<small>ค่าลบคือสุญญากาศ (เดินเบา ถอนคันเร่ง) ค่าบวกคือมีบูสต์ · ใช้ความดันบรรยากาศคงที่ 101 kPa</small></td><td>bar</td><td>จาก MAP</td><td><code>–</code></td></tr>
+                <tr class="grp"><th colspan="5">ค่าเพิ่มเติม อัพเดทประมาณทุก 1–3 วินาที · ขึ้นกับรุ่นรถ ถ้ารถไม่ส่งค่าจะขึ้น --</th></tr>
+                <tr><td>TIMING<span class="def">DASH</span></td><td>องศาจุดระเบิดล่วงหน้า</td><td>องศา</td><td><code>010E</code></td><td><code>TIMING</code></td></tr>
+                <tr><td>AFR<span class="def">DASH</span></td><td>อัตราส่วนอากาศต่อน้ำมันที่วัดได้<small>14.7 = สมบูรณ์ · ต่ำกว่าคือหนา สูงกว่าคือบาง · ต้องเป็นรถที่มีเซนเซอร์ O2 แบบไวด์แบนด์</small></td><td>–</td><td><code>0134</code></td><td><code>AFR_MEAS</code></td></tr>
+                <tr><td>AFR CMD</td><td>อัตราส่วนอากาศต่อน้ำมันที่ ECU สั่ง<small>เทียบกับ AFR ที่วัดได้ว่า ECU คุมได้ตามที่ต้องการไหม</small></td><td>–</td><td><code>0144</code></td><td><code>AFR_CMD</code></td></tr>
+                <tr><td>INJ DUTY</td><td>ภาระงานหัวฉีด (injector duty)<small>ใช้คำสั่งเฉพาะรุ่นรถ ร้านต้องตั้งให้ก่อน ถ้ายังไม่ตั้งจะขึ้น --</small></td><td>%</td><td>เฉพาะรุ่น</td><td><code>INJ_DUTY</code></td></tr>
+                <tr><td>LOAD</td><td>โหลดเครื่องยนต์ที่ ECU คำนวณ</td><td>%</td><td><code>0104</code></td><td><code>LOAD</code></td></tr>
+                <tr><td>OIL TEMP</td><td>อุณหภูมิน้ำมันเครื่อง<small>หลายรุ่นไม่ส่งค่านี้</small></td><td>°C</td><td><code>015C</code></td><td><code>OIL_TEMP</code></td></tr>
+                <tr><td>FUEL PRS</td><td>แรงดันน้ำมันเชื้อเพลิง</td><td>kPa</td><td><code>010A</code></td><td><code>FUEL_PRES</code></td></tr>
+                <tr><td>RAIL PRS</td><td>แรงดันรางหัวฉีด<small>ส่วนใหญ่เป็นรถดีเซลคอมมอนเรลหรือเบนซินไดเร็กอินเจ็กชัน</small></td><td>MPa</td><td><code>0123</code></td><td><code>RAIL_PRES</code></td></tr>
+                <tr><td>INTAKE</td><td>อุณหภูมิอากาศเข้าเครื่อง</td><td>°C</td><td><code>010F</code></td><td><code>IAT</code></td></tr>
+                <tr><td>MAF</td><td>ปริมาณอากาศที่เข้าเครื่อง<small>เฉพาะรถที่ใช้เซนเซอร์ MAF</small></td><td>g/s</td><td><code>0110</code></td><td><code>MAF</code></td></tr>
+                <tr><td>FUEL LVL</td><td>ระดับน้ำมันในถัง</td><td>%</td><td><code>012F</code></td><td><code>FUEL_LVL</code></td></tr>
+                <tr><td>STFT</td><td>Fuel trim ระยะสั้น<small>ค่าบวกคือ ECU เติมน้ำมันเพิ่ม ค่าลบคือลด</small></td><td>%</td><td><code>0106</code></td><td><code>STFT</code></td></tr>
+                <tr><td>LTFT</td><td>Fuel trim ระยะยาว<small>ค่าที่ ECU เรียนรู้ไว้ ถ้าห่างจาก 0 มากอาจมีลมรั่วหรือหัวฉีดมีปัญหา</small></td><td>%</td><td><code>0107</code></td><td><code>LTFT</code></td></tr>
+                <tr><td>BARO</td><td>ความดันบรรยากาศ<small>ระดับน้ำทะเลประมาณ 101 · ขึ้นเขาจะลดลง</small></td><td>kPa</td><td><code>0133</code></td><td><code>BARO</code></td></tr>
+                <tr><td>AMBIENT</td><td>อุณหภูมิอากาศนอกรถ</td><td>°C</td><td><code>0146</code></td><td><code>AMBIENT</code></td></tr>
+                <tr><td>CAT TEMP</td><td>อุณหภูมิแคตตาไลติก</td><td>°C</td><td><code>013C</code></td><td><code>CAT_TEMP</code></td></tr>
+                <tr><td>PEDAL</td><td>ตำแหน่งแป้นคันเร่ง<small>ต่างจาก THROTTLE ในรถคันเร่งไฟฟ้า: PEDAL คือเท้า THROTTLE คือลิ้นที่ ECU เปิดจริง</small></td><td>%</td><td><code>0149</code></td><td><code>PEDAL</code></td></tr>
+                <tr><td>TRAN TEMP</td><td>อุณหภูมิน้ำมันเกียร์<small>รถส่วนใหญ่ไม่ส่งค่านี้ผ่านคำสั่งมาตรฐาน เกียร์ออโต้/CVT หลายรุ่นต้องใช้คำสั่งเฉพาะรุ่น</small></td><td>°C</td><td><code>01B4</code></td><td><code>TRAN_TEMP</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="vals-note reveal" style="margin-top:18px"><b>ไม่มีแรงดันน้ำมันเครื่อง (oil pressure)</b> เพราะไม่มีใน OBD2 มาตรฐาน รถทั่วไปมีแค่สวิตช์ไฟเตือน ถ้าต้องการค่านี้ต้องติดเซนเซอร์แรงดันเพิ่ม</p>
       </div>
     </section>
 
@@ -374,7 +434,7 @@
         </div>
         <div class="gallery">
           <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dash.png" width="480" height="320" alt="หน้า DASH จอ 3.5 นิ้ว"></div>
-            <figcaption><b>DASH</b>การ์ด 6 ช่อง ความเร็ว รอบ บูสต์ คันเร่ง น้ำ แบต ตัวเลขใหญ่ อ่านง่ายตอนขับ</figcaption></figure>
+            <figcaption><b>DASH</b>การ์ด 9 ช่อง ตัวเลขใหญ่ อ่านง่ายตอนขับ กดค้างที่การ์ดเพื่อเลือกค่าที่แสดง</figcaption></figure>
           <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-peak.png" width="480" height="320" alt="หน้า BOOST &amp; PEAK จอ 3.5 นิ้ว"></div>
             <figcaption><b>BOOST &amp; PEAK</b>บูสต์เป็น bar พร้อมค่าสูงสุด จับเวลา 0-100 และค่าสูงสุดของรอบ ความเร็ว น้ำ</figcaption></figure>
           <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-limits.png" width="480" height="320" alt="หน้า ALERT LIMITS จอ 3.5 นิ้ว"></div>
@@ -414,7 +474,7 @@
               <tr><th>การควบคุม</th><td>จอสัมผัส ปัดเปลี่ยนหน้า</td></tr>
               <tr><th>เชื่อมต่อรถ</th><td>ELM327 ผ่าน WiFi หรือ BLE</td></tr>
               <tr><th>ที่เก็บข้อมูล</th><td>การ์ด microSD (ล็อก / อัพเดท)</td></tr>
-              <tr><th>เฟิร์มแวร์ล่าสุด</th><td><span data-ver="28">1.16.1</span></td></tr>
+              <tr><th>เฟิร์มแวร์ล่าสุด</th><td><span data-ver="28">1.17.0</span></td></tr>
             </table>
             <div class="btns">
               <a class="btn ghost small" href="demo.html">ลองสาธิต</a>
@@ -453,7 +513,7 @@
           <ul class="checks">
             <li>ลายเซ็นดิจิทัล ECDSA ทุกไฟล์ แก้ไข ลบ หรือสลับลำดับข้อมูลแล้วตรวจพบ</li>
             <li>เข้ารหัสค่าในไฟล์ (AES) เปิดดูได้เฉพาะเครื่องที่มีกุญแจของร้าน</li>
-            <li>บันทึกไทมิ่ง AFR วัด/สั่ง และ injector duty นอกเหนือจาก 6 ค่าบนจอ</li>
+            <li>บันทึกทุกค่าที่รถรองรับ สูงสุด 24 ค่า ไม่ว่าการ์ดบนจอจะแสดงค่าไหนอยู่ (ดู<a href="#values" style="color:var(--accent)">ตารางค่า</a>)</li>
             <li>R0CKY LogViewer: เปิดหลายไฟล์เป็นแท็บ ซ้อนกราฟ ตาราง มาตรวัด และเล่นย้อนหลัง</li>
           </ul>
         </div>
@@ -486,11 +546,13 @@
         </div>
         <div class="faq reveal">
           <details><summary>ใช้กับรถรุ่นไหนได้บ้าง</summary>
-            <p>รถที่มีช่องวินิจฉัย OBD2 และใช้งานกับ ELM327 ได้ ค่าที่อ่านเป็นค่ามาตรฐาน OBD2 (รอบ ความเร็ว น้ำ คันเร่ง MAP แบต) ส่วน injector duty ต้องตั้งคำสั่งเฉพาะรุ่นรถ ซึ่งเราเตรียมแนวทางไว้สำหรับ Honda บางรุ่น (FD, FB, GE, GK, FC) สอบถามรุ่นรถของคุณก่อนสั่งได้</p></details>
+            <p>รถที่มีช่องวินิจฉัย OBD2 และใช้งานกับ ELM327 ได้ ค่าที่อ่านเป็นค่ามาตรฐาน OBD2 (ดู<a href="#values" style="color:var(--accent)">ตารางค่าที่อ่านได้</a>) 6 ค่าหลักมีในรถแทบทุกคัน ค่าอื่นขึ้นกับรุ่นรถ ส่วน injector duty ต้องตั้งคำสั่งเฉพาะรุ่นรถ ซึ่งเราเตรียมแนวทางไว้สำหรับ Honda บางรุ่น (FD, FB, GE, GK, FC) สอบถามรุ่นรถของคุณก่อนสั่งได้</p></details>
+          <details><summary>ทำไมบางช่องขึ้น --</summary>
+            <p>แปลว่ายังไม่ได้ค่าจากรถ ถ้ายังไม่ได้ต่อ ELM327 ทุกช่องจะขึ้น -- ถ้าต่อแล้วแต่ช่องไหนยังขึ้น -- อยู่ แปลว่า ECU ของรถคันนั้นไม่ส่งค่านั้น (รถแต่ละรุ่นรองรับไม่เท่ากัน) กดค้างที่การ์ดแล้วเลือกค่าอื่นแทนได้</p></details>
           <details><summary>ต้องใช้ ELM327 แบบไหน</summary>
             <p>ELM327 ที่เป็น WiFi หรือ Bluetooth LE (BLE) เกจเชื่อมต่อแบบไร้สายและจำอุปกรณ์ที่เลือกไว้ พอเปิดรถก็ต่อให้เองโดยอัตโนมัติ</p></details>
           <details><summary>ใส่รหัสผ่าน WiFi อย่างไร</summary>
-            <p>ที่หน้า DEVICES กด SCAN แล้วแตะชื่อ WiFi ที่มีรหัส จะมีแป้นพิมพ์ขึ้นมาให้พิมพ์รหัสผ่านบนจอ (จอ 3.5") แล้วกด OK</p></details>
+            <p>ที่หน้า DEVICES กด SCAN แล้วแตะชื่อ WiFi ที่มีรหัส จะมีแป้นพิมพ์ขึ้นมาให้พิมพ์รหัสผ่านบนจอ (ทั้งจอ 2.8" และ 3.5") แล้วกด OK</p></details>
           <details><summary>อัพเดทเฟิร์มแวร์ยากไหม</summary>
             <p>ไม่ยาก ต่อ WiFi ที่มีอินเทอร์เน็ต ไปหน้า FLASH ดูเลขรุ่นบนเว็บ กด DOWNLOAD แล้ว FLASH (กดซ้ำเพื่อยืนยัน) หรือโหลดไฟล์จากหน้าดาวน์โหลดไปใส่การ์ด SD เองก็ได้</p></details>
           <details><summary>ไฟล์ล็อกเปิดดูได้อย่างไร</summary>
@@ -515,7 +577,7 @@
 
   <footer>
     <div class="wrap">
-      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.16.1</span> · จอ 3.5" <span data-ver="35">1.0.0</span></div>
+      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.17.0</span> · จอ 3.5" <span data-ver="35">1.0.0</span></div>
       <nav><a href="demo.html">สาธิต</a><a href="logviewer.html">LogViewer</a><a href="download.html">ดาวน์โหลดเฟิร์มแวร์</a><a href="#faq">คำถาม</a></nav>
     </div>
   </footer>
