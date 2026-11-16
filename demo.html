@@ -53,14 +53,14 @@
       </nav>
       <p class="mark">R0CKY GAUGES</p>
       <h1>ลองใช้เกจบนเว็บ</h1>
-      <p class="lead">หน้าจอด้านล่างจำลองเกจจอ 3.5" (480×320) วาดด้วยเลย์เอาต์เดียวกับเฟิร์มแวร์จริง จอ 2.8" หน้าตาเหมือนกันทุกหน้า ลองปัดเปลี่ยนหน้า กดค้างที่การ์ดเพื่อเปลี่ยนค่า และเลือกสถานการณ์ขับใต้จอ</p>
+      <p class="lead">หน้าจอด้านล่างจำลองเกจจอ 3.5" (480×320) วาดด้วยเลย์เอาต์เดียวกับเฟิร์มแวร์จริง จอ 2.8" หน้าตาเหมือนกันแต่แสดงจำนวนค่าน้อยกว่า ลองปัดเปลี่ยนหน้า กดค้างที่ค่าเพื่อเปลี่ยน และเลือกสถานการณ์ขับใต้จอ</p>
     </header>
     <div class="grid">
       <div>
         <div class="bezel"><canvas id="lcd" width="480" height="320" aria-label="จอจำลองของเกจ"></canvas></div>
         <div class="under">
-          <span>หน้า <b id="page-label">DASH</b></span>
-          <span>ปัดซ้าย/ขวาเพื่อเปลี่ยนหน้า · หน้า DASH กดค้างที่การ์ด</span>
+          <span>หน้า <b id="page-label">VALUES 1</b></span>
+          <span>ปัดซ้าย/ขวาเพื่อเปลี่ยนหน้า · หน้าค่ากดค้างที่ตัวเลข</span>
         </div>
         <div class="pager"><button id="prev" type="button">‹ หน้าก่อน</button><button id="next" type="button">หน้าถัดไป ›</button></div>
         <p class="label">สถานการณ์ขับ</p>
@@ -68,20 +68,27 @@
       </div>
       <div>
         <section class="block">
-          <h2>หน้า DASH: เลือกค่าที่อยากดูเอง</h2>
-          <p>การ์ด 9 ช่อง <b>กดค้างที่การ์ดประมาณครึ่งวินาที</b> จะขึ้นรายการ 25 ค่าให้เลือก (รอบ ความเร็ว MAP บูสต์ ไทมิ่ง AFR น้ำมันเครื่อง fuel trim อากาศเข้า ฯลฯ) เกจจำค่าที่เลือกไว้ ดูความหมายของทุกค่าได้ที่<a href="index.html#values">ตารางค่าที่อ่านได้</a></p>
+          <h2>หน้าค่า: เลือกค่าที่อยากดูเอง</h2>
+          <p>พื้นดำ ตัวเลขขาว ชื่อค่าและหน่วยสีเทา ไม่มีชื่อหน้าหรือโลโก้ <b>กดค้างที่ตัวเลขประมาณครึ่งวินาที</b> จะขึ้นรายการ 25 ค่าให้เลือก (รอบ ความเร็ว MAP บูสต์ ไทมิ่ง AFR น้ำมันเครื่อง fuel trim อากาศเข้า ฯลฯ) แต่ละหน้าจำค่าของตัวเองแยกกัน ดูความหมายของทุกค่าได้ที่<a href="index.html#values">ตารางค่าที่อ่านได้</a></p>
           <p>ในหน้าจำลองนี้ RAIL PRS, CAT TEMP, TRAN TEMP และ INJ DUTY ขึ้น -- เหมือนรถที่ไม่ส่งค่านั้น ลองเลือกดู</p>
         </section>
         <section class="block">
-          <h2>เจ็ดหน้าบนจอ</h2>
+          <h2>หกหน้าที่ปัดผ่าน</h2>
           <ul class="cap">
-            <li><b>DASH</b> การ์ด 9 ช่อง ตัวเลขใหญ่ RPM เป็นสีแดงเมื่อใกล้รอบเตือน เกินลิมิตแล้วจอเปลี่ยนเป็นหน้าเตือนสีแดงเต็มจอ (ลอง "ชนลิมิต")</li>
-            <li><b>BOOST &amp; PEAK</b> บูสต์เป็น bar (MAP ลบ 101 kPa ติดลบคือสุญญากาศ) พร้อมค่าสูงสุด จับเวลา 0-100 กม./ชม. ให้เอง: เลือก "เดินเบา" ให้ขึ้น READY แล้วเลือก "เร่ง" กด RESET เพื่อล้างค่า</li>
-            <li><b>DEVICES</b> กด SCAN ได้ทั้ง Bluetooth LE และ WiFi ในรายการเดียว แสดงเฉพาะอุปกรณ์ที่มีชื่อ แตะชื่อเพื่อต่อ WiFi ที่มีรหัสจะขึ้นแป้นพิมพ์</li>
-            <li><b>ALERT LIMITS</b> ตั้งค่าเตือนรอบ ความเร็ว น้ำ คันเร่ง MAP แบตต่ำ และปรับความเร็วให้ตรงมาตรวัด (Speed cal) ด้วยปุ่ม - +</li>
-            <li><b>LOG</b> ไฟล์ล็อกในการ์ด SD แตะไฟล์เพื่อดูกราฟ แตะชื่อค่าด้านบนเพื่อเปลี่ยนค่า ปุ่มกลางซูม &lt; &gt; เลื่อนช่วงเวลา ไฟล์ที่ขึ้น Recording คือไฟล์ที่กำลังบันทึกจากหน้าจำลองนี้</li>
+            <li><b>หน้าค่า 1</b> 9 ค่า (3 x 3) บนจอ 3.5" (จอ 2.8" แสดง 4 ค่า) RPM เป็นสีแดงเมื่อใกล้รอบเตือน เกินลิมิตแล้วมีแถบเตือนสีเหลืองขึ้นด้านล่าง (ลอง "ชนลิมิต")</li>
+            <li><b>หน้าค่า 2</b> 4 ค่า (2 x 2) ตัวเลขใหญ่ขึ้น <b>หน้าค่า 3</b> 2 ค่าซ้ายขวา ตัวเลขใหญ่สุด</li>
+            <li><b>DEVICE</b> รายชื่อ ELM327 Bluetooth กด SCAN แล้วกด Connect ตัวที่ต่ออยู่มีแถบสีและคำว่า Connected กด Disconnect ทางขวาเพื่อตัด</li>
+            <li><b>CONNECTION</b> Wi-Fi สำหรับดาวน์โหลดเฟิร์มแวร์ เลือกเครือข่าย ใส่รหัสผ่านด้วยแป้นพิมพ์ แล้วกด Connect</li>
+            <li><b>SYSTEM</b> รายการตั้งค่า (สีเน้น พื้นหลัง การ์ด) แล้วเปิดหน้าย่อยได้: FIRMWARE, ALERT LIMIT, SPEED CAL, DRIVE LOGS, TROUBLE CODES ปัดไปทางไหนก็กลับมา SYSTEM</li>
+          </ul>
+        </section>
+        <section class="block">
+          <h2>หน้าย่อยจาก SYSTEM</h2>
+          <ul class="cap">
+            <li><b>FIRMWARE</b> เทียบรุ่นที่ติดตั้ง รุ่นในการ์ด SD และรุ่นบนเว็บ DOWNLOAD ลงการ์ด แล้ว INSTALL ต้องยืนยันก่อนเขียน ต่อ Wi-Fi ที่หน้า CONNECTION ก่อนจึงโหลดได้ (ลองในหน้านี้ได้ ไม่ได้เขียนเฟิร์มแวร์จริง)</li>
+            <li><b>ALERT LIMIT</b> รายการเตือนรอบ ความเร็ว น้ำ คันเร่ง MAP แบตต่ำ เปิด/ปิดด้วยสวิตช์ แตะแถวเพื่อแก้ค่าด้วยปุ่ม - + แล้ว SAVE</li>
+            <li><b>DRIVE LOGS</b> ไฟล์ล็อกในการ์ด SD แตะไฟล์เพื่อดูกราฟ แตะชื่อค่าด้านบนเพื่อเปลี่ยนค่า ปุ่มกลางซูม &lt; &gt; เลื่อนช่วงเวลา ไฟล์ที่ขึ้น Recording คือไฟล์ที่กำลังบันทึกจากหน้าจำลองนี้</li>
             <li><b>TROUBLE CODES</b> อ่านโค้ดเสียที่เก็บไว้และที่รอยืนยัน บอกว่าโค้ดเกี่ยวกับระบบไหน ล้างไฟเตือนต้องกดยืนยันสองครั้ง</li>
-            <li><b>SYSTEM</b> เทียบรุ่นเฟิร์มแวร์ในเครื่อง ในการ์ด SD และบนเว็บ กด DOWNLOAD แล้ว FLASH เพื่ออัพเดท</li>
           </ul>
         </section>
         <section class="block">
@@ -111,11 +118,11 @@
   const FONTS = {
     XS: { css: "600 15px Rajdhani", capH: 10 }, SM: { css: "600 19px Rajdhani", capH: 13 },
     MD: { css: "700 23px Rajdhani", capH: 15 }, BIG: { css: "700 40px Rajdhani", capH: 26 },
-    NUM: { css: "700 64px Rajdhani", capH: 42 }
+    NUM: { css: "700 64px Rajdhani", capH: 42 }, CARD: { css: "700 56px Rajdhani", capH: 37 }, LBL: { css: "700 28px Rajdhani", capH: 18 }
   };
   // calm size roles -> the 3.5" font of each (ui.cpp calmFont)
   const R = { CR10: "XS", CR11: "XS", CS11: "XS", CR12: "SM", CS12: "SM", CR13: "SM", CR14: "SM", CR16: "MD", CR17: "MD",
-              CR18: "MD", CR20: "BIG", CR24: "BIG", CR28: "BIG", CR30: "BIG", CR36: "BIG", CN46: "NUM", CN108: "NUM" };
+              CR18: "MD", CR20: "BIG", CR24: "BIG", CR28: "BIG", CR30: "BIG", CR36: "BIG", CN46: "NUM", CN108: "NUM", CVAL: "CARD", CLBL: "LBL" };
   const NA = "--";
 
   // ------------------------------------------------------------------ the 25 channels (shared/apex/dash_channels.h)
@@ -131,7 +138,7 @@
     ["AMBIENT", "°C", "amb", 0, "-88"], ["CAT TEMP", "°C", "cat", 0, "8888"], ["PEDAL", "%", "pedal", 0, "888"],
     ["TRAN TEMP", "°C", "tran", 0, "888"]
   ].map(([name, unit, key, dec, widest]) => ({ name, unit, key, dec, widest }));
-  const PAGES = ["DASH", "BOOST & PEAK", "DEVICES", "ALERT LIMITS", "LOG", "TROUBLE CODES", "SYSTEM"];
+  const PAGES = ["VALUES 1", "VALUES 2", "VALUES 3", "DEVICE", "CONNECTION", "SYSTEM", "ALERT LIMIT", "DRIVE LOGS", "TROUBLE CODES", "FIRMWARE"];
   const SCENES = [
     { id: "idle", name: "เดินเบา", rpm: 850, spd: 0, clt: 88, tps: 1, map: 33, v: 14.2, on: true },
     { id: "city", name: "ในเมือง", rpm: 2300, spd: 52, clt: 91, tps: 18, map: 52, v: 14.1, on: true },
@@ -147,24 +154,25 @@
 
   const state = {
     page: 0, scene: "idle", online: true,
-    cards: [0, 1, 2, 3, 4, 5, 6, 7, 8], pick: -1,
+    cards: [0, 1, 2, 3, 4, 5, 6, 7, 8, 1, 0, 4, 6, 1, 0], pick: -1, pickPage: 0, valCard: 0, accent: 0, backdrop: 0,
     target: { rpm: 850, spd: 0, clt: 88, tps: 1, map: 33, v: 14.2 },
     shown: { rpm: 850, spd: 0, clt: 88, tps: 1, map: 33, v: 14.2 },
-    limits: [7500, 0, 110, 0, 0, 11.5], speedCal: 0,
-    peak: { rpm: NaN, spd: NaN, clt: NaN, boost: NaN, zs: 0, start: 0, last: 0, best: 0 },
-    dev: { list: [], scanning: false, scanUntil: 0, live: 0, picked: 0, first: 0, status: "CONNECTED",
-           connectAt: 0, kb: null },
+    limits: [7500, 0, 110, 0, 0, 11.5], thresh: [7500, 120, 110, 90, 200, 11.5], speedCal: 0,
+    lim: { sub: 0, edit: -1, val: 0 },
+    dev: { list: [], scanning: false, scanUntil: 0, live: 0, picked: 0, first: 0, connectAt: 0, kb: null },
+    conn: { ssid: "", lock: false, pass: "", connected: false, status: "Not connected", at: 0, note: "", listOpen: false, scanning: false, scanUntil: 0, nets: [], first: 0 },
+    fw: { installed: "1.6.2", online: "1.6.3", sd: "", view: "ready", title: "", sub: "", start: 0, dur: 0, done: "", msg: "" },
     log: { page: 0, open: 0, graph: false, metric: 0, zoom: 0, start: 0 },
     dtc: { read: false, pending: false, codes: [], status: "", confirm: false, busyUntil: 0 },
-    sys: { file: "", msg: "", msgCol: C.MUTED, confirm: false, busyUntil: 0 },
-    blinkOff: false
+    sys: { first: 0, restart: false, note: "" }
   };
-  const DEVICES = [
-    { name: "OBDII (OBD)", id: "a4:c1:38:11:20:4b", ble: true, rssi: -58 },
-    { name: "VEEPEAK", id: "11:22:33:44:55:66", ble: true, rssi: -74 },
-    { name: "V-LINK", id: "B8:27:EB:44:01:9C", ble: false, rssi: -64, lock: true },
-    { name: "WIFI_OBDII", id: "24:6F:28:AA:10:02", ble: false, rssi: -80, lock: false },
-    { name: "HOME-5G", id: "C8:5A:9F:BD:A6:00", ble: false, rssi: -86, lock: true }
+  const DEVICES = [  // Bluetooth ELM327 adapters (the DEVICE page)
+    { name: "OBDII", id: "aa:bb:cc:11:22:33" },
+    { name: "ELM327", id: "aa:bb:cc:44:55:66" },
+    { name: "OBDLink", id: "aa:bb:cc:77:88:99" }
+  ];
+  const NETWORKS = [  // Wi-Fi networks (CONNECTION > NETWORK)
+    { name: "V-LINK", lock: true }, { name: "WIFI_OBDII", lock: false }, { name: "HOME-5G", lock: true }
   ];
 
   // ------------------------------------------------------------------ drawing primitives (layout units 320x240)
@@ -209,10 +217,9 @@
     text(x + w / 2, y + h / 2, label, "CR14", ink, "C", "mid");
   }
   function header(title, page, right) {
-    text(8, 11, title, "CR17", C.TEXT, "L", "mid");
-    rr(8, 20, Math.min(textW(title, "CR17"), 28), 2, 1, C.ACC);
-    const x0 = 196 - (PAGES.length - 1) * 4;
-    for (let i = 0; i < PAGES.length; i++) ci(x0 + i * 8, 11, i === page ? 2.2 : 1.6, i === page ? C.ACC : C.FAINT);
+    rr(4, 5, 3, 13, 1, C.ACC);
+    text(13, 11, fit(title, "CR17", 142), "CR17", C.TEXT, "L", "mid");
+    fl(8, 23, 304, 1, C.OFF);
     if (right) { text(312, 11, right, "CR13", C.ACC, "R", "mid"); return; }
     const col = state.online ? C.GREEN : C.MUTED, word = state.online ? "LINK" : "NO LINK";
     text(312, 11, word, "CR12", col, "R", "mid");
@@ -244,47 +251,84 @@
     return s;
   }
 
-  // ------------------------------------------------------------------ DASH (calm::paintDash)
-  const DASH_M = 4, DASH_GAP = 4;
-  function dashCardRect(i) {
-    const cw = (320 - 2 * DASH_M - 2 * DASH_GAP) / 3, ch = (240 - 2 * DASH_M - 2 * DASH_GAP) / 3;
-    return [DASH_M + (i % 3) * (cw + DASH_GAP), DASH_M + Math.floor(i / 3) * (ch + DASH_GAP), cw, ch];
+  // ------------------------------------------------------------------ VALUE PAGES (calm::paintValues)
+  // Three pages of plain readings: grey name, white number, grey unit, thin dividers, no title or page dots.
+  // Page 1 = 9 values (3 x 3), page 2 = 4 (2 x 2), page 3 = 2 side by side. Long press a value to pick its channel.
+  const VAL_PAD = 8, VAL_TOP = 5, VAL_BOTTOM = 236;
+  const VCOLS = [3, 2, 2], VCOUNT = [9, 4, 2], VFIRST = [0, 9, 13];
+  const VAL_ROLES = [["CVAL", "CR36", "CR18", "CR18"], ["CN46", "CVAL", "CR36", "CR18"], ["CN108", "CVAL", "CR36", "CR18"]];
+  const VAL_CARDS = [["Off", null], ["Dark", "rgb(26,28,33)"], ["Grey", "rgb(62,66,74)"], ["Red", "rgb(150,24,24)"],
+                     ["Blue", "rgb(24,64,160)"], ["Green", "rgb(24,116,56)"], ["Orange", "rgb(214,104,16)"]];
+  function valCell(vp, k) {
+    const cols = VCOLS[vp], rows = Math.ceil(VCOUNT[vp] / cols), cw = (320 - 2 * VAL_PAD) / cols, ch = (VAL_BOTTOM - VAL_TOP) / rows;
+    return [VAL_PAD + (k % cols) * cw, VAL_TOP + Math.floor(k / cols) * ch, cw, ch];
   }
-  function paintDash() {
-    bg();
-    const rd = readings(), shift = state.limits[0];
-    for (let i = 0; i < 9; i++) {
-      const c = CH[state.cards[i]], r = dashCardRect(i);
-      const val = rd[c.key];
-      const hot = c.key === "rpm" && shift > 0 && Number.isFinite(val) && val >= shift * 0.9;
-      rr(r[0], r[1], r[2], r[3], 6, C.CARD, C.LINE);
-      text(r[0] + 8, r[1] + 8, c.name, "CR12", CARD_COLS[i], "L", "top");
-      if (c.unit) text(r[0] + r[2] - 8, r[1] + 8, c.unit, "CR11", C.MUTED, "R", "top");
-      const role = textW(c.widest, "CN46") <= r[2] - 14 ? "CN46" : "CR36";
-      text(r[0] + r[2] - 8, r[1] + r[3] * 0.64, numText(val, c.dec), role, hot ? C.RED : C.TEXT, "R", "mid");
+  function inkOn(col) {
+    const m = col.match(/\d+/g).map(Number);
+    return (0.299 * m[0] + 0.587 * m[1] + 0.114 * m[2]) > 150 ? "rgb(0,0,0)" : "rgb(255,255,255)";
+  }
+  function valRole(vp, rd) {
+    const maxW = valCell(vp, 0)[2] - 12;
+    for (const role of VAL_ROLES[vp]) {
+      let ok = true;
+      for (let k = 0; k < VCOUNT[vp] && ok; k++) {
+        const c = CH[state.cards[VFIRST[vp] + k]];
+        if (textW(c.widest, role) > maxW || textW(numText(rd[c.key], c.dec), role) > maxW) ok = false;
+      }
+      if (ok) return role;
     }
+    return "CR18";
   }
-  // value picker (calm::paintDashPicker)
-  const PICK_CANCEL = [236, 2, 78, 20];
+  const ALERT_TEXT = ["ENGINE RPM OVERREV", "SPEED OVER LIMIT", "COOLANT TEMP HIGH", "THROTTLE OVER LIMIT", "BOOST / MAP HIGH", "BATTERY VOLTAGE LOW"];
+  function paintAlertBar(msg) {
+    fl(0, 216, 320, 24, "rgb(255,196,0)"); fl(0, 216, 320, 1, "rgb(255,225,90)");
+    text(160, 228, fit(msg, "CR16", 304), "CR16", "rgb(40,24,0)", "C", "mid");
+  }
+  function paintValues(vp) {
+    bg();
+    const rd = readings(), shift = state.limits[0], n = VCOUNT[vp], cols = VCOLS[vp], rows = Math.ceil(n / cols);
+    const cw = valCell(vp, 0)[2], ch = valCell(vp, 0)[3], role = valRole(vp, rd);
+    const face = VAL_CARDS[state.valCard][1];
+    const ink = face ? inkOn(face) : C.TEXT, muted = face ? (ink === "rgb(0,0,0)" ? "rgba(0,0,0,0.67)" : "rgba(255,255,255,0.67)") : C.MUTED;
+    if (!face) {
+      for (let c = 1; c < cols; c++) fl(VAL_PAD + c * cw, VAL_TOP + 5, 1, VAL_BOTTOM - VAL_TOP - 10, C.OFF);
+      for (let r = 1; r < rows; r++) fl(VAL_PAD + 5, VAL_TOP + r * ch, 320 - 2 * VAL_PAD - 10, 1, C.OFF);
+    }
+    const hotCol = face === "rgb(150,24,24)" ? C.AMBER : C.RED;
+    for (let k = 0; k < n; k++) {
+      const c = CH[state.cards[VFIRST[vp] + k]], val = rd[c.key];
+      const x = VAL_PAD + (k % cols + 0.5) * cw, y = VAL_TOP + Math.floor(k / cols) * ch;
+      if (face) rr(VAL_PAD + (k % cols) * cw + 2, y + 2, cw - 4, ch - 4, 6, face);
+      const hot = c.key === "rpm" && shift > 0 && Number.isFinite(val) && val >= shift * 0.9;
+      text(x, y + ch * 0.19, fit(c.name, "CR12", cw - 8), "CR12", muted, "C", "mid");
+      text(x, y + ch * 0.51, numText(val, c.dec), role, hot ? hotCol : ink, "C", "mid");
+      if (c.unit) text(x, y + ch * 0.80, c.unit, "CR11", muted, "C", "mid");
+    }
+    const am = alertMetric();
+    if (am >= 0) paintAlertBar(ALERT_TEXT[am]);
+  }
+  // value picker (calm::paintDashPicker): 3 columns, up to 18 channels a page, < n/m > turns pages
+  const PICK_PER_PAGE = 18, PICK_CANCEL = [236, 2, 78, 20], PICK_PREV = [136, 2, 30, 20], PICK_NEXT = [202, 2, 30, 20];
+  const pickPages = () => Math.ceil(CH.length / PICK_PER_PAGE);
   function pickRect(i) {
-    const rows = Math.ceil(CH.length / 4), top = 28, w = (320 - 8 - 12) / 4, h = (240 - top - 4 - (rows - 1) * 4) / rows;
-    return [4 + (i % 4) * (w + 4), top + Math.floor(i / 4) * (h + 4), w, h];
+    const rows = Math.min(6, Math.ceil(CH.length / 3)), slot = i % PICK_PER_PAGE, top = 28, w = (320 - 8 - 8) / 3, h = (240 - top - 4 - (rows - 1) * 4) / rows;
+    return [4 + (slot % 3) * (w + 4), top + Math.floor(slot / 3) * (h + 4), w, h];
   }
   function paintPicker() {
     bg();
-    const k = state.pick;
-    text(8, 12, `CARD ${k + 1}: SHOW`, "CR14", C.TEXT, "L", "mid");
-    rr(8, 21, 28, 2, 1, CARD_COLS[k]);
+    const k = state.pick, vp = k >= VFIRST[2] ? 2 : (k >= VFIRST[1] ? 1 : 0), cur = state.cards[k];
+    text(8, 12, `PAGE ${vp + 1} / VALUE ${k - VFIRST[vp] + 1}`, "CR14", C.TEXT, "L", "mid");
+    rr(8, 22, 28, 2, 1, C.ACC);
     button(...PICK_CANCEL, "CANCEL");
-    CH.forEach((c, i) => {
-      const r = pickRect(i), on = i === state.cards[k];
+    button(...PICK_PREV, "<"); button(...PICK_NEXT, ">");
+    text(184, 12, `${state.pickPage + 1}/${pickPages()}`, "CR12", C.TEXT, "C", "mid");
+    for (let i = state.pickPage * PICK_PER_PAGE; i < CH.length && i < (state.pickPage + 1) * PICK_PER_PAGE; i++) {
+      const r = pickRect(i), on = i === cur;
       rr(r[0], r[1], r[2], r[3], 5, on ? C.ACC : C.CARD, on ? 1 : C.LINE);
-      text(r[0] + r[2] / 2, r[1] + r[3] / 2, c.name, "CR12", on ? C.INK : C.TEXT, "C", "mid");
-    });
+      text(r[0] + r[2] / 2, r[1] + r[3] / 2, fit(CH[i].name, "CR12", r[2] - 12), "CR12", on ? C.INK : C.TEXT, "C", "mid");
+    }
   }
-  // full-screen limit alert
-  const ALERT_NAMES = ["SHIFT", "SPEED", "COOLANT", "THROTTLE", "MAP", "BATTERY"];
-  const ALERT_UNITS = ["RPM", "KM/H", "°C", "%", "KPA", "V"];
+  // limit alert: an amber bar along the bottom edge of the value pages
   function alertMetric() {
     const s = state.shown, v = [s.rpm, s.spd, s.clt, s.tps, s.map, s.v];
     if (!state.online) return -1;
@@ -294,108 +338,72 @@
     }
     return -1;
   }
-  function paintAlert(m) {
-    g.fillStyle = C.ALERT_BG; g.fillRect(0, 0, W, H);
-    const s = state.shown, v = [s.rpm, s.spd, s.clt, s.tps, s.map, s.v][m];
-    text(160, 34, ALERT_NAMES[m], "CR30", C.TEXT, "C", "mid");
-    text(160, 132, m === 5 ? v.toFixed(1) : String(Math.round(v)), "CN108", C.TEXT, "C", "mid");
-    const lim = state.limits[m];
-    text(160, 214, `${m === 5 ? "BELOW " : "LIMIT "}${m === 5 ? lim.toFixed(1) : lim} ${ALERT_UNITS[m]}`, "CR16", "rgb(255,210,210)", "C", "mid");
-  }
 
-  // ------------------------------------------------------------------ BOOST & PEAK (calm::paintPeak)
-  const PEAK_RESET = [242, 140, 70, 58];
-  function zeroView() {
-    const p = state.peak;
-    if (p.zs === 2) return [((performance.now() - p.start) / 1000).toFixed(1), "GO!", C.ACC];
-    if (p.zs === 3) return [p.last.toFixed(1), "DONE", C.GREEN];
-    if (p.zs === 1) return ["0.0", "READY", C.TEXT];
-    return [NA, "STOP TO ARM", C.MUTED];
-  }
-  function paintPeak() {
+  // ------------------------------------------------------------------ DEVICE (calm::paintList) + CONNECTION (calm::paintConnection)
+  const LIST_BTN = [226, 8, 84, 26], LIST_BACK = [160, 8, 60, 26], DEV_Y = 72, DEV_STEP = 51;
+  const pageTitle = (t) => text(14, 17, t, "CR17", C.TEXT, "L", "mid");
+  function paintList(v, first) {
     bg();
-    header("BOOST & PEAK", 1);
-    const top = 26, p = state.peak;
-    const b = state.online ? (state.shown.map - 101) / 100 : NaN;
-    card(8, top + 4, 196, 104);
-    text(16, top + 14, "BOOST", "CR12", C.MUTED, "L", "top");
-    text(196, top + 14, Number.isFinite(p.boost) ? `PEAK ${p.boost >= 0 ? "+" : ""}${p.boost.toFixed(2)}` : "PEAK --", "CR12", C.RED, "R", "top");
-    text(16, top + 30, Number.isFinite(b) ? `${b >= 0 ? "+" : ""}${b.toFixed(2)}` : NA, "CN46", Number.isFinite(b) && b > 0 ? C.ACC : C.TEXT, "L", "top");
-    text(196, top + 66, "bar", "CR12", C.MUTED, "R", "base");
-    const bx = 16, bw = 180, by = top + 84, zero = bx + bw * 0.4;
-    rr(bx, by, bw, 6, 2, C.OFF);
-    if (Number.isFinite(b)) {
-      const xv = bx + bw * clamp((b + 1) / 2.5, 0, 1);
-      if (xv > zero) rr(zero, by, xv - zero, 6, 2, C.ACC); else if (xv < zero) rr(xv, by, zero - xv, 6, 2, C.BLUE);
+    pageTitle(v.title);
+    text(14, 37, v.subtitle, "CS12", C.MUTED, "L", "mid");
+    button(...LIST_BTN, v.button, v.busy ? "off" : "main");
+    if (v.back) button(...LIST_BACK, "BACK");
+    text(14, 59, fit(v.status, "CS12", 292), "CS12", C.MUTED, "L", "mid");
+    for (let r = 0; r < 3 && first + r < v.rows.length; r++) {
+      const d = v.rows[first + r], y = DEV_Y + r * DEV_STEP, h = DEV_STEP - 3;
+      if (d.live) { fl(8, y, 304, h, "rgb(38,40,44)"); fl(8, y, 2, h, C.ACC); }
+      const rw = Math.max(textW(d.right, "CR14"), textW(d.sub || "", "CS11")) + 12;
+      text(18, y + 15, fit(d.name, "CR16", 290 - rw), "CR16", C.TEXT, "L", "mid");
+      text(18, y + 34, fit(d.id, "CS11", 290 - rw), "CS11", C.MUTED, "L", "mid");
+      text(304, y + 15, d.right, "CR14", d.live ? C.ACC : C.TEXT, "R", "mid");
+      if (d.sub) text(304, y + 34, d.sub, "CS11", C.MUTED, "R", "mid");
+      if (!d.live) fl(16, y + h, 288, 1, C.OFF);
     }
-    if (Number.isFinite(p.boost)) fl(bx + bw * clamp((p.boost + 1) / 2.5, 0, 1) - 1, by - 3, 2, 12, C.RED);
-    fl(zero, by - 2, 1, 10, C.TEXT);
-    [[-1, "-1"], [0, "0"], [1, "+1"], [1.5, "1.5"]].forEach(([v, l]) => text(bx + bw * (v + 1) / 2.5, by + 16, l, "CR10", C.MUTED, "C", "mid"));
-    card(210, top + 4, 102, 104);
-    text(218, top + 14, "0-100 km/h", "CR12", C.MUTED, "L", "top");
-    const [zt, zh, zc] = zeroView();
-    text(261, top + 50, zt === NA ? zt : zt + " s", "CR36", zc === C.GREEN ? C.GREEN : C.TEXT, "C", "mid");
-    text(261, top + 76, zh, "CR12", zc, "C", "mid");
-    text(218, top + 100, `BEST ${p.best ? p.best.toFixed(1) : "--"}`, "CR12", C.MUTED, "L", "base");
-    const labs = ["RPM", "km/h", "WATER °C"], vals = [p.rpm, p.spd, p.clt];
-    for (let i = 0; i < 3; i++) {
-      const x = 8 + i * 78, y = top + 114;
-      card(x, y, 72, 58);
-      text(x + 8, y + 8, labs[i], "CR12", C.MUTED, "L", "top");
-      text(x + 64, y + 38, numText(vals[i], 0), "CR24", C.TEXT, "R", "mid");
+    if (v.rows.length > 3) {
+      const len = 3 * DEV_STEP - 6;
+      fl(314, DEV_Y, 2, len, C.OFF);
+      const th = Math.max(14, len * 3 / v.rows.length);
+      fl(314, DEV_Y + (len - th) * first / Math.max(1, v.rows.length - 3), 2, th, C.ACC);
     }
-    button(...PEAK_RESET, "RESET");
-  }
-  function peakTrack() {
-    const p = state.peak, s = state.shown;
-    if (!state.online) return;
-    const mx = (a, b) => Number.isFinite(a) ? Math.max(a, b) : b;
-    p.rpm = mx(p.rpm, s.rpm); p.spd = mx(p.spd, s.spd); p.clt = mx(p.clt, s.clt); p.boost = mx(p.boost, (s.map - 101) / 100);
-    if (s.spd < 1 && p.zs !== 2) p.zs = 1;
-    else if (p.zs === 1 && s.spd >= 1) { p.zs = 2; p.start = performance.now(); }
-    else if (p.zs === 2 && s.spd >= 100) {
-      p.zs = 3; p.last = (performance.now() - p.start) / 1000;
-      if (!p.best || p.last < p.best) p.best = p.last;
-    }
-  }
-
-  // ------------------------------------------------------------------ DEVICES (calm::paintDevices) + WiFi keyboard
-  const DEV_SCAN = [8, 30, 148, 28], DEV_DISC = [164, 30, 148, 28];
-  function devStatus() {
-    const d = state.dev;
-    if (d.scanning) return "Scanning BLE and WiFi...";
-    return d.status;
   }
   function paintDevices() {
-    bg();
-    header("DEVICES", 2);
-    const d = state.dev, busy = d.scanning || d.connectAt;
-    button(...DEV_SCAN, "SCAN", busy ? "off" : "main");
-    button(...DEV_DISC, "DISCONNECT", "danger");
-    if (d.scanning || !d.list.length) {
-      text(160, 130, d.scanning ? "Scanning..." : "No devices yet", "CR18", C.TEXT, "C", "mid");
-      text(160, 152, d.scanning ? "BLE first, then WiFi" : "SCAN lists WiFi and BLE together", "CS12", C.MUTED, "C", "mid");
-    } else {
-      for (let r = 0; r < 3 && d.first + r < d.list.length; r++) {
-        const i = d.first + r, e = d.list[i], y = 66 + r * 50, live = i === d.live && state.online;
-        rr(8, y, 304, 44, 5, C.CARD, live ? C.GREEN : (i === d.picked ? C.ACC : C.LINE));
-        const kind = e.ble ? "BLE" : "WiFi", tw = textW(kind, "CR11") + 10;
-        rr(16, y + 8, tw, 14, 3, e.ble ? C.ACC : C.BLUE);
-        text(16 + tw / 2, y + 15, kind, "CR11", "rgb(10,10,12)", "C", "mid");
-        text(22 + tw, y + 15, fit(e.name, "CR16", 240 - tw), "CR16", C.TEXT, "L", "mid");
-        text(16, y + 34, e.ble ? e.id : "MAC " + e.id, "CS11", C.MUTED, "L", "mid");
-        const bars = Math.round(clamp((e.rssi + 95) / 45, 0, 1) * 4);
-        for (let k = 0; k < 4; k++) { const bh = 4 + k * 3; fl(286 + k * 5, y + 22 - bh, 3, bh, k < bars ? (live ? C.GREEN : C.TEXT) : C.OFF); }
-        if (live) text(304, y + 34, "CONNECTED", "CR11", C.GREEN, "R", "mid");
-        else if (e.lock) text(304, y + 34, "LOCKED", "CR11", C.AMBER, "R", "mid");
-      }
-      if (d.list.length > 3) {
-        fl(314, 66, 3, 144, C.OFF);
-        const th = Math.max(14, 144 * 3 / d.list.length), ty = 66 + (144 - th) * d.first / Math.max(1, d.list.length - 3);
-        fl(314, ty, 3, th, C.ACC);
-      }
+    const d = state.dev;
+    const rows = d.scanning ? [] : d.list.map((e, i) => {
+      const live = i === d.live && state.online;
+      return { name: e.name, id: e.id.toUpperCase(), right: live ? "Connected" : "Connect", sub: live ? "Disconnect" : "", live };
+    });
+    paintList({ title: "Device", subtitle: "Bluetooth / ELM327", button: "SCAN", busy: d.scanning || d.connectAt, rows,
+      status: d.scanning ? "Scanning..." : (d.connectAt ? "Connecting..." : `${d.list.length} devices found`) }, d.first);
+  }
+  const CONN_Y = 96, CONN_STEP = 30;
+  const connRow = (i) => [8, CONN_Y + i * CONN_STEP - CONN_STEP * 0.45, 304, CONN_STEP];
+  function paintConnection() {
+    const c = state.conn;
+    if (c.listOpen) {
+      const rows = c.scanning ? [] : c.nets.map((e) => ({ name: e.name, id: e.lock ? "Password needed" : "Open network", right: "Select", sub: "" }));
+      paintList({ title: "Wi-Fi networks", subtitle: "Tap a network", button: "SCAN", busy: c.scanning, back: true, rows,
+        status: c.scanning ? "Scanning..." : `${c.nets.length} networks found` }, c.first);
+      return;
     }
-    text(8, 232, fit(devStatus(), "CS11", 304), "CS11", C.MUTED, "L", "mid");
+    bg();
+    pageTitle("Connection");
+    text(14, 46, "Wi-Fi", "CR18", C.TEXT, "L", "mid");
+    text(14, 66, "For firmware downloads", "CS12", C.MUTED, "L", "mid");
+    const labs = ["STATUS", "NETWORK", "PASSWORD", "ACTION"];
+    const pw = c.pass ? "*".repeat(Math.min(c.pass.length, 12)) : (c.ssid && !c.lock ? "Not needed" : "Enter password");
+    const vals = [c.status, c.ssid || "Select Wi-Fi", pw, c.connected ? "Disconnect" : "Connect"];
+    const cols = [c.connected ? C.ACC : C.TEXT, C.TEXT, c.pass ? C.TEXT : C.MUTED, C.ACC];
+    for (let i = 0; i < 4; i++) {
+      const y = CONN_Y + i * CONN_STEP;
+      text(14, y, labs[i], "CR11", C.MUTED, "L", "mid");
+      text(306, y, fit(vals[i], "CR14", 200), "CR14", cols[i], "R", "mid");
+      fl(14, y + CONN_STEP * 0.55, 292, 1, C.OFF);
+    }
+    if (c.note) text(14, 218, fit(c.note, "CS11", 292), "CS11", C.MUTED, "L", "mid");
+  }
+  function connectWifi() {
+    const c = state.conn;
+    c.status = "Connecting..."; c.note = ""; c.connected = false; c.at = performance.now() + 1800;
   }
   // 3.5" keyboard (ui.cpp drawKeyboard), drawn in device pixels 480x320.
   const KB_ROWS = [["1234567890", "qwertyuiop", "asdfghjkl", "zxcvbnm"], ["1234567890", "QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"],
@@ -439,7 +447,7 @@
     if (inR(298, 4, 86, 30)) { state.dev.kb = null; return; }
     if (inR(390, 4, 82, 30)) {
       if (k.text.length < 8) { k.msg = "At least 8 characters"; return; }
-      state.dev.kb = null; devConnect(k.idx); return;
+      state.dev.kb = null; state.conn.pass = k.text; connectWifi(); return;
     }
     for (let r = 0; r < 4; r++) {
       const ky = KB_Y0 + r * KB_ROW_STEP;
@@ -465,44 +473,77 @@
       else if (inR(202, y4, 266, KB_H) && k.text.length < 63) k.text += " ";
     }
   }
-  function devConnect(i) {
-    const d = state.dev;
-    d.picked = i; d.live = -1; state.online = false;
-    d.status = "Connecting to " + d.list[i].name + "...";
-    d.connectAt = performance.now() + 1800;
+  // ------------------------------------------------------------------ ALERT LIMIT (calm::paintAlertList / paintAlertEdit)
+  const A_NAMES = ["Engine RPM", "Speed", "Coolant", "Throttle", "MAP", "Battery low", "Speed cal"];
+  const A_UNITS = ["rpm", "km/h", "°C", "%", "kPa", "V", "%"];
+  const A_MAX = [20000, 400, 150, 100, 300, 16, 10];
+  const aStep = (i) => i === 0 ? 100 : (i === 1 || i === 3 || i === 4) ? 5 : (i === 2 ? 1 : 0.5);
+  const aMin = (i) => i === 6 ? 0 : aStep(i);
+  const aClamp = (i, v) => clamp(Math.round(v / aStep(i)) * aStep(i), aMin(i), A_MAX[i]);
+  const aNum = (i, v) => i === 6 ? "+" + v.toFixed(1) : (i === 5 ? v.toFixed(1) : String(Math.round(v)));
+  const aLine = (i, v) => (i === 5 ? "< " : "> ") + aNum(i, v) + " " + A_UNITS[i];
+  const A_BACK = [236, 7, 72, 32], A_PREV = [16, 201, 64, 30], A_NEXT = [240, 201, 64, 30];
+  const A_MINUS = [16, 95, 48, 48], A_PLUS = [256, 95, 48, 48], A_SAVE = [16, 194, 288, 34];
+  const aSwitch = (r) => [248, 76 + r * 44 - 12, 72, 38], aRow = (r) => [0, 76 + r * 44 - 14, 244, 44];
+  const SOFT = "rgb(48,50,54)";
+  function softButton(r, label, role, ink) {
+    rr(r[0], r[1], r[2], r[3], 4, SOFT);
+    text(r[0] + r[2] / 2, r[1] + r[3] / 2, label, role, ink, "C", "mid");
   }
-
-  // ------------------------------------------------------------------ ALERT LIMITS (calm::paintLimits)
-  const LIM_STEP_V = [250, 5, 1, 5, 5, 0.1], LIM_MAX = [12000, 300, 130, 100, 300, 14];
+  function alertTitle(title, back) { text(16, 23, title, "CR17", C.TEXT, "L", "mid"); softButton(A_BACK, back, "CR12", C.TEXT); }
   function paintLimits() {
     bg();
-    header("ALERT LIMITS", 3);
-    const labs = ["Engine RPM", "Speed", "Coolant", "Throttle", "MAP", "Battery low", "Speed cal"];
-    const units = ["", "km/h", "°C", "%", "kPa", "V", "%"];
-    for (let i = 0; i < 7; i++) {
-      const y = 30 + i * 30, cy = y + 13;
-      let value;
-      if (i === 6) value = (state.speedCal >= 0 ? "+" : "") + state.speedCal.toFixed(1);
-      else value = state.limits[i] > 0 ? (i === 5 ? state.limits[i].toFixed(1) : String(state.limits[i])) : "";
-      const on = value.length > 0;
-      rr(8, y, 304, 26, 4, C.CARD, C.LINE);
-      text(16, cy, labs[i], "CR14", on ? C.TEXT : C.MUTED, "L", "mid");
-      let vx = 236;
-      if (units[i]) { text(vx, cy, units[i], "CR11", C.MUTED, "R", "mid"); vx -= textW(units[i], "CR11") + 4; }
-      text(vx, cy, on ? value : "OFF", "CR17", on ? C.ACC : C.FAINT, "R", "mid");
-      ["-", "+"].forEach((sym, k) => { const bx = 244 + k * 34; rr(bx, y + 3, 30, 20, 4, C.BG, C.LINE); text(bx + 15, cy, sym, "CR16", C.TEXT, "C", "mid"); });
+    const L = state.lim;
+    if (L.edit >= 0) {
+      const m = L.edit, cal = m === 6, on = cal || state.limits[m] > 0;
+      alertTitle(cal ? "Speed cal" : "Alert Limit", "< BACK");
+      text(160, 59, cal ? "SPEED CALIBRATION" : (m === 5 ? "BATTERY" : A_NAMES[m].toUpperCase()), "CR12", C.MUTED, "C", "mid");
+      text(160, 81, cal ? "Speed shown = ECU speed plus" : (m === 5 ? "Alert when below" : "Alert when above"), "CS11", C.MUTED, "C", "mid");
+      const v = aNum(m, L.val);
+      text(160, 118, v, textW(v, "CN46") <= 180 ? "CN46" : "CR36", C.TEXT, "C", "mid");
+      text(160, 151, A_UNITS[m], "CR14", C.MUTED, "C", "mid");
+      softButton(A_MINUS, "-", "CR28", C.TEXT); softButton(A_PLUS, "+", "CR28", C.TEXT);
+      text(160, 175, `Step ${aStep(m) < 1 ? aStep(m).toFixed(1) : aStep(m)} ${A_UNITS[m]}${!cal && !on ? "  (alert off)" : ""}`, "CS11", C.MUTED, "C", "mid");
+      rr(A_SAVE[0], A_SAVE[1], A_SAVE[2], A_SAVE[3], 4, C.ACC);
+      text(160, A_SAVE[1] + A_SAVE[3] / 2, "SAVE", "CR16", C.INK, "C", "mid");
+      return;
     }
+    alertTitle("Alert Limit", "< SYSTEM");
+    text(16, 51, "Tap a value to edit", "CS11", C.MUTED, "L", "mid");
+    for (let r = 0; r < 3; r++) {
+      const i = L.sub * 3 + r, y = 76 + r * 44, on = state.limits[i] > 0;
+      text(16, y, A_NAMES[i], "CR16", C.TEXT, "L", "mid");
+      text(16, y + 19, aLine(i, state.thresh[i]), "CS12", on ? C.ACC : C.MUTED, "L", "mid");
+      rr(260, y - 5, 44, 24, 12, on ? C.ACC : C.OFF);
+      ci(on ? 292 : 272, y + 7, 8, on ? "rgb(255,255,255)" : C.MUTED);
+      fl(16, y + 32, 288, 1, C.OFF);
+    }
+    softButton(A_PREV, "<", "CR18", L.sub > 0 ? C.TEXT : C.MUTED);
+    softButton(A_NEXT, ">", "CR18", L.sub < 1 ? C.TEXT : C.MUTED);
+    text(160, 216, `${L.sub + 1} / 2`, "CR11", C.MUTED, "C", "mid");
   }
   function limitsTap(x, y) {
-    if (y < 28 || y >= 30 + 7 * 30) return;
-    const row = Math.floor((y - 28) / 30);
-    const dir = x >= 240 && x < 276 ? -1 : x >= 276 ? 1 : 0;
-    if (!dir || row > 6) return;
-    if (row === 6) { state.speedCal = clamp(Math.round((state.speedCal + dir * 0.5) * 10) / 10, -20, 20); return; }
-    let v = state.limits[row] + dir * LIM_STEP_V[row];
-    if (row === 5) v = Math.round(v * 10) / 10;
-    if (row === 5 && v < 10) v = 0;
-    state.limits[row] = clamp(v, 0, LIM_MAX[row]);
+    const L = state.lim;
+    if (L.edit >= 0) {
+      const m = L.edit;
+      if (hit(A_BACK, x, y)) L.edit = -1;
+      else if (hit(A_MINUS, x, y)) L.val = aClamp(m, L.val - aStep(m));
+      else if (hit(A_PLUS, x, y)) L.val = aClamp(m, L.val + aStep(m));
+      else if (hit(A_SAVE, x, y)) {
+        if (m === 6) state.speedCal = L.val;
+        else { state.thresh[m] = L.val; if (state.limits[m] > 0) state.limits[m] = L.val; }
+        L.edit = -1;
+      }
+      return;
+    }
+    if (hit(A_BACK, x, y)) { state.page = 5; return; }
+    if (hit(A_PREV, x, y)) { L.sub = 0; return; }
+    if (hit(A_NEXT, x, y)) { L.sub = 1; return; }
+    for (let r = 0; r < 3; r++) {
+      const i = L.sub * 3 + r;
+      if (hit(aSwitch(r), x, y)) { state.limits[i] = state.limits[i] > 0 ? 0 : state.thresh[i]; return; }
+      if (hit(aRow(r), x, y)) { L.edit = i; L.val = state.thresh[i]; return; }
+    }
   }
 
   // ------------------------------------------------------------------ LOG (calm::paintLogFiles / paintLogGraph)
@@ -556,7 +597,7 @@
   const LOG_PREV = [8, 206, 64, 28], LOG_NEXT = [248, 206, 64, 28];
   function paintLogFiles() {
     bg();
-    header("LOG", 4);
+    header("LOG", 7, "< SYSTEM");
     const L = state.log, pages = Math.ceil(LOG_FILES.length / 3);
     L.page = clamp(L.page, 0, pages - 1);
     for (let i = 0; i < 3; i++) {
@@ -670,7 +711,7 @@
   const DTC_AREA = { P0301: "Ignition or misfire", P0171: "Fuel and air metering", P0420: "Emission controls" };
   function paintDtc() {
     bg();
-    header("TROUBLE CODES", 5);
+    header("TROUBLE CODES", 8, "< SYSTEM");
     const d = state.dtc;
     button(...DTC_READ, "READ", "main");
     button(...DTC_PEND, "PENDING");
@@ -701,44 +742,134 @@
     }
   }
 
-  // ------------------------------------------------------------------ SYSTEM (calm::paintSystem, 3.5": no invert switch)
-  const FW = "1.3.0", SYS_DL = [8, 108, 148, 30], SYS_FLASH = [164, 108, 148, 30];
+  // ------------------------------------------------------------------ SYSTEM (calm::paintSystemList) + FIRMWARE
+  const ACCENTS = [["Orange", "rgb(255,140,32)"], ["Lime", "rgb(150,230,40)"], ["Cyan", "rgb(80,220,220)"], ["Blue", "rgb(70,140,240)"],
+                   ["Purple", "rgb(170,110,245)"], ["Yellow", "rgb(240,200,40)"], ["Red", "rgb(255,110,60)"], ["Pink", "rgb(240,100,170)"]];
+  const BACKDROPS = [["Dark", "rgb(10,11,13)"], ["Charcoal", "rgb(32,34,38)"], ["Navy", "rgb(10,20,44)"]];
+  const SYS_VISIBLE = 6, SYS_Y = 48, SYS_STEP = 29;
+  const sysRow = (r) => [8, SYS_Y + r * SYS_STEP - SYS_STEP * 0.45, 304, SYS_STEP];
+  const fwNewer = () => state.fw.online > state.fw.installed;
+  function sysRows() {
+    const s = state.sys;
+    return [
+      ["ACCENT", ACCENTS[state.accent][0], false], ["BACKGROUND", BACKDROPS[state.backdrop][0], false],
+      ["CARDS", VAL_CARDS[state.valCard][0], false],
+      ["FIRMWARE", fwNewer() ? "Update " + state.fw.online : "v" + state.fw.installed, fwNewer()],
+      ["ALERT LIMIT", "Edit", false], ["SPEED CAL", (state.speedCal >= 0 ? "+" : "") + state.speedCal.toFixed(1) + " %", false],
+      ["DRIVE LOGS", "View", false], ["TROUBLE CODES", "Read", false],
+      ["DEVICE", s.restart ? "Tap again to restart" : "Restart", s.restart]
+    ];
+  }
   function paintSystem() {
     bg();
-    header("SYSTEM", 6);
-    const s = state.sys;
-    card(8, 30, 304, 70);
-    const rows = [["Firmware", FW, "running", C.TEXT], ["SD card", s.file || "NONE", s.file ? "1480 kb" : "no file", s.file ? C.ACC : C.MUTED],
-                  ["Web", FW, "online", C.GREEN]];
-    rows.forEach(([lab, ver, note, col], i) => {
-      const y = 44 + i * 20;
-      text(16, y, lab, "CR13", C.MUTED, "L", "mid");
-      text(150, y, ver, "CR16", col, "L", "mid");
-      text(304, y, note, "CS12", C.MUTED, "R", "mid");
-    });
-    button(...SYS_DL, "DOWNLOAD");
-    button(...SYS_FLASH, s.confirm ? "CONFIRM FLASH" : (s.file ? "FLASH " + s.file : "FLASH"), s.confirm ? "dangerMain" : "main");
-    if (s.msg) text(160, 196, fit(s.msg, "CR12", 300), "CR12", s.msgCol, "C", "mid");
+    pageTitle("SYSTEM");
+    const rows = sysRows(), s = state.sys;
+    if (s.note) text(306, 17, fit(s.note, "CS11", 170), "CS11", C.ACC, "R", "mid");
+    for (let r = 0; r < SYS_VISIBLE && s.first + r < rows.length; r++) {
+      const [lab, val, acc] = rows[s.first + r], y = SYS_Y + r * SYS_STEP;
+      text(14, y, lab, "CR11", C.MUTED, "L", "mid");
+      text(306, y, fit(val, "CR14", 190), "CR14", acc ? C.ACC : C.TEXT, "R", "mid");
+      fl(14, y + SYS_STEP * 0.55, 292, 1, C.OFF);
+    }
+    if (rows.length > SYS_VISIBLE) {
+      const top = SYS_Y - SYS_STEP * 0.45, len = SYS_VISIBLE * SYS_STEP;
+      fl(314, top, 2, len, C.OFF);
+      const th = Math.max(14, len * SYS_VISIBLE / rows.length);
+      fl(314, top + (len - th) * s.first / Math.max(1, rows.length - SYS_VISIBLE), 2, th, C.ACC);
+    }
   }
   function sysTap(x, y) {
-    const s = state.sys;
-    if (hit(SYS_DL, x, y)) { s.confirm = false; s.msg = "Downloading..."; s.msgCol = C.TEXT; s.busyUntil = performance.now() + 1500; }
-    else if (hit(SYS_FLASH, x, y)) {
-      if (!s.file) { s.msg = "Put dash.bin on SD"; s.msgCol = C.TEXT; return; }
-      if (!s.confirm) { s.confirm = true; s.msg = "Tap FLASH again"; s.msgCol = C.TEXT; s.confirmAt = performance.now(); return; }
-      s.confirm = false; s.msg = "Demo only: the real board flashes and restarts here"; s.msgCol = C.ACC;
+    const s = state.sys, rows = sysRows();
+    let row = -1;
+    for (let r = 0; r < SYS_VISIBLE && s.first + r < rows.length; r++) if (hit(sysRow(r), x, y)) row = s.first + r;
+    if (row < 0) return;
+    const name = rows[row][0];
+    if (name !== "DEVICE") s.restart = false;
+    s.note = "";
+    if (name === "ACCENT") { state.accent = (state.accent + 1) % ACCENTS.length; C.ACC = ACCENTS[state.accent][1]; }
+    else if (name === "BACKGROUND") { state.backdrop = (state.backdrop + 1) % BACKDROPS.length; C.BG = BACKDROPS[state.backdrop][1]; }
+    else if (name === "CARDS") state.valCard = (state.valCard + 1) % VAL_CARDS.length;
+    else if (name === "FIRMWARE") { state.fw.view = "ready"; state.page = 9; }
+    else if (name === "ALERT LIMIT") { state.lim.edit = -1; state.page = 6; }
+    else if (name === "SPEED CAL") { state.lim.edit = 6; state.lim.val = state.speedCal; state.page = 6; }
+    else if (name === "DRIVE LOGS") { state.log.graph = false; state.page = 7; }
+    else if (name === "TROUBLE CODES") state.page = 8;
+    else if (!s.restart) s.restart = true;
+    else { s.restart = false; s.note = "Demo only: the real board restarts here"; }
+  }
+  // FIRMWARE (calm::paintFirmware / paintFirmwareConfirm / paintProgress)
+  const FW_BACK = [236, 7, 72, 32], FW_WIFI = [150, 42, 170, 24], FW_DL = [16, 188, 138, 36], FW_INST = [166, 188, 138, 36];
+  const FW_CANCEL = [16, 194, 138, 34], FW_NOW = [166, 194, 138, 34];
+  function fwButton(r, label, main, enabled) {
+    rr(r[0], r[1], r[2], r[3], 4, !enabled ? "rgb(26,28,31)" : (main ? C.ACC : SOFT));
+    text(r[0] + r[2] / 2, r[1] + r[3] / 2, label, "CR14", !enabled ? C.MUTED : (main ? C.INK : C.TEXT), "C", "mid");
+  }
+  function fwTitle(back) { text(16, 23, "Firmware", "CR17", C.TEXT, "L", "mid"); if (back) softButton(FW_BACK, back, "CR12", C.TEXT); }
+  function paintFirmware() {
+    bg();
+    const f = state.fw, wifi = state.conn.connected;
+    if (f.view === "progress") {
+      fwTitle(null);
+      text(16, 65, f.title, "CR20", C.TEXT, "L", "mid");
+      text(16, 93, f.sub, "CS12", C.MUTED, "L", "mid");
+      rr(16, 176, 288, 5, 2, C.OFF);
+      const p = clamp(Math.floor((performance.now() - f.start) / f.dur * 100), 0, 99);
+      text(304, 150, "%", "CR28", C.TEXT, "R", "base");
+      text(304 - textW("%", "CR28") - 2, 150, String(p), "CN46", C.TEXT, "R", "base");
+      if (p > 0) rr(16, 176, Math.max(5, 288 * p / 100), 5, 2, C.ACC);
+      text(16, 210, f.title[0] === "D" ? "Keep Wi-Fi and power connected." : "Keep power connected. Restarting when done.", "CS11", C.MUTED, "L", "mid");
+      return;
     }
+    if (f.view === "confirm") {
+      fwTitle("< BACK");
+      text(160, 75, "Install from SD card?", "CR18", C.TEXT, "C", "mid");
+      const line = f.installed + "  >  " + f.sd;
+      text(160, 113, line, textW(line, "CR28") <= 288 ? "CR28" : "CR18", C.TEXT, "C", "mid");
+      text(160, 150, "The display will restart when complete.", "CS11", C.MUTED, "C", "mid");
+      text(160, 169, "Keep power connected.", "CS11", C.MUTED, "C", "mid");
+      fwButton(FW_CANCEL, "CANCEL", false, true); fwButton(FW_NOW, "INSTALL NOW", true, true);
+      return;
+    }
+    fwTitle("< SYSTEM");
+    text(16, 54, 'OBD2 - 3.5"', "CS11", C.MUTED, "L", "mid");
+    text(304, 54, wifi ? "Wi-Fi connected" : "No Wi-Fi - tap to connect", "CS11", wifi ? C.ACC : C.MUTED, "R", "mid");
+    const labs = ["Installed", "On SD card", "Available online"];
+    const vals = [f.installed, f.sd || "No file", wifi ? f.online : "Not checked"];
+    const isVer = [true, !!f.sd, wifi];
+    for (let i = 0; i < 3; i++) {
+      const y = 85 + i * 34;
+      text(16, y, labs[i], "CR14", C.MUTED, "L", "mid");
+      text(304, y, vals[i], isVer[i] ? "CR18" : "CR14", !isVer[i] ? C.MUTED : (i === 2 && fwNewer() ? C.ACC : C.TEXT), "R", "mid");
+      fl(16, y + 17, 288, 1, C.OFF);
+    }
+    fwButton(FW_DL, "DOWNLOAD", false, wifi && f.online !== f.sd);
+    fwButton(FW_INST, "INSTALL", true, !!f.sd);
+    if (f.msg) text(16, 233, fit(f.msg, "CS11", 288), "CS11", C.MUTED, "L", "mid");
+  }
+  function fwTap(x, y) {
+    const f = state.fw, wifi = state.conn.connected, now = performance.now();
+    if (f.view === "progress") return;
+    if (f.view === "confirm") {
+      if (hit(FW_BACK, x, y) || hit(FW_CANCEL, x, y)) f.view = "ready";
+      else if (hit(FW_NOW, x, y)) { f.view = "progress"; f.title = "Installing"; f.sub = "Writing " + f.sd; f.start = now; f.dur = 2500; f.done = "install"; }
+      return;
+    }
+    if (hit(FW_BACK, x, y)) state.page = 5;
+    else if (!wifi && hit(FW_WIFI, x, y)) state.page = 4;
+    else if (wifi && f.online !== f.sd && hit(FW_DL, x, y)) { f.view = "progress"; f.title = "Downloading"; f.sub = "dash35-" + f.online + ".bin"; f.start = now; f.dur = 2000; f.done = "download"; f.msg = ""; }
+    else if (f.sd && hit(FW_INST, x, y)) f.view = "confirm";
   }
 
   // ------------------------------------------------------------------ frame
-  const PAINT = [paintDash, paintPeak, paintDevices, paintLimits, () => (state.log.graph ? paintLogGraph() : paintLogFiles()), paintDtc, paintSystem];
+  // Swipe order: values 1, 2, 3, DEVICE, CONNECTION, SYSTEM (pages 0-5). Pages 6-9 open from SYSTEM and swipe back to it.
+  const PAINT = [() => paintValues(0), () => paintValues(1), () => paintValues(2), paintDevices, paintConnection, paintSystem, paintLimits,
+                 () => (state.log.graph ? paintLogGraph() : paintLogFiles()), paintDtc, paintFirmware];
   function paint() {
     g.globalAlpha = 1;
-    if (state.page === 0 && state.pick >= 0) paintPicker();
-    else if (state.page === 2 && state.dev.kb) paintKeyboard();
-    else if (state.page === 0 && alertMetric() >= 0) { paintAlert(alertMetric()); if (state.blinkOff) { g.fillStyle = "rgba(0,0,0,0.55)"; g.fillRect(0, 0, W, H); } }
+    if (state.page < 3 && state.pick >= 0) paintPicker();
+    else if (state.dev.kb) paintKeyboard();
     else PAINT[state.page]();
-    document.getElementById("page-label").textContent = state.page === 0 && state.pick >= 0 ? "DASH: เลือกค่า" : PAGES[state.page];
+    document.getElementById("page-label").textContent = state.page < 3 && state.pick >= 0 ? "เลือกค่า" : PAGES[state.page];
   }
   let last = performance.now(), logAt = 0;
   function tick(now) {
@@ -751,9 +882,16 @@
       if (jit) s.rpm += jit * dt * 10;
     }
     const d = state.dev;
-    if (d.scanning && now >= d.scanUntil) { d.scanning = false; d.list = DEVICES.slice(); d.status = `Found ${d.list.length} - tap a name`; d.live = -1; }
-    if (d.connectAt && now >= d.connectAt) {
-      d.connectAt = 0; d.live = d.picked; state.online = state.scene !== "off"; d.status = state.online ? "CONNECTED" : "No answer from the car";
+    if (d.scanning && now >= d.scanUntil) { d.scanning = false; d.list = DEVICES.slice(); d.live = -1; }
+    if (d.connectAt && now >= d.connectAt) { d.connectAt = 0; d.live = d.picked; state.online = state.scene !== "off"; }
+    const c = state.conn;
+    if (c.scanning && now >= c.scanUntil) { c.scanning = false; c.nets = NETWORKS.slice(); }
+    if (c.at && now >= c.at) { c.at = 0; c.connected = true; c.status = "Connected"; }
+    const f = state.fw;
+    if (f.view === "progress" && now - f.start >= f.dur) {
+      f.view = "ready";
+      if (f.done === "download") { f.sd = f.online; f.msg = "Downloaded " + f.sd; }
+      else { f.installed = f.sd; f.msg = "Demo only: the real board restarts here"; }
     }
     const dt2 = state.dtc;
     if (dt2.busyUntil && now >= dt2.busyUntil) {
@@ -761,32 +899,34 @@
       dt2.codes = state.dtcCleared ? [] : (dt2.pending ? ["P0420"] : ["P0301", "P0171"]);
     }
     if (dt2.confirm && now - dt2.confirmAt > 8000) { dt2.confirm = false; dt2.status = ""; }
-    const sy = state.sys;
-    if (sy.busyUntil && now >= sy.busyUntil) { sy.busyUntil = 0; sy.file = FW; sy.msg = ""; }
-    if (sy.confirm && now - sy.confirmAt > 8000) { sy.confirm = false; sy.msg = ""; }
-    peakTrack();
     if (now - logAt >= 500) { logAt = now; logRecordLive(); }
-    state.blinkOff = Math.floor(now / 250) % 2 === 1;
     paint();
     requestAnimationFrame(tick);
   }
 
-  // ------------------------------------------------------------------ input: tap, long press (DASH), swipe, list drag
+  // ------------------------------------------------------------------ input: tap, long press (value pages), swipe, list drag
   let ptr = null;
   function toLayout(e) {
     const r = cv.getBoundingClientRect();
     return { x: (e.clientX - r.left) / r.width * 320, y: (e.clientY - r.top) / r.height * 240 };
   }
-  const modal = () => (state.page === 0 && state.pick >= 0) || (state.page === 2 && state.dev.kb);
+  const modal = () => (state.page < 3 && state.pick >= 0) || !!state.dev.kb;
+  // The list the finger can drag on the current page: {first, set, count, vis, step}
+  function dragList() {
+    if (state.page === 3) return { first: state.dev.first, set: (v) => (state.dev.first = v), count: state.dev.list.length, vis: 3, step: 51 };
+    if (state.page === 4 && state.conn.listOpen) return { first: state.conn.first, set: (v) => (state.conn.first = v), count: state.conn.nets.length, vis: 3, step: 51 };
+    if (state.page === 5) return { first: state.sys.first, set: (v) => (state.sys.first = v), count: sysRows().length, vis: SYS_VISIBLE, step: 29 };
+    return null;
+  }
   cv.addEventListener("pointerdown", (e) => {
     cv.setPointerCapture(e.pointerId);
-    const p = toLayout(e);
-    ptr = { x0: p.x, y0: p.y, x: p.x, y: p.y, done: false, drag: false, first0: state.dev.first };
-    if (state.page === 0 && state.pick < 0) {
+    const p = toLayout(e), dl = dragList();
+    ptr = { x0: p.x, y0: p.y, x: p.x, y: p.y, done: false, drag: false, first0: dl ? dl.first : 0 };
+    if (state.page < 3 && state.pick < 0) {
       ptr.timer = setTimeout(() => {
         if (!ptr || ptr.done || Math.abs(ptr.x - ptr.x0) > 12 || Math.abs(ptr.y - ptr.y0) > 12) return;
-        const k = [...Array(9).keys()].find((i) => hit(dashCardRect(i), ptr.x0, ptr.y0));
-        if (k !== undefined) { state.pick = k; ptr.done = true; }
+        const vp = state.page, k = [...Array(VCOUNT[vp]).keys()].find((i) => hit(valCell(vp, i), ptr.x0, ptr.y0));
+        if (k !== undefined) { state.pick = VFIRST[vp] + k; state.pickPage = Math.floor(state.cards[state.pick] / PICK_PER_PAGE); ptr.done = true; }
       }, 600);
     }
   });
@@ -794,13 +934,13 @@
     if (!ptr) return;
     const p = toLayout(e);
     ptr.x = p.x; ptr.y = p.y;
-    const dx = p.x - ptr.x0, dy = p.y - ptr.y0;
-    if (state.page === 2 && !modal() && state.dev.list.length > 3 && (ptr.drag || (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)))) {
+    const dx = p.x - ptr.x0, dy = p.y - ptr.y0, dl = dragList();
+    if (dl && !modal() && dl.count > dl.vis && (ptr.drag || (Math.abs(dy) > 8 && Math.abs(dy) > Math.abs(dx)))) {
       ptr.drag = true;
-      state.dev.first = clamp(ptr.first0 - Math.round(dy / 50), 0, state.dev.list.length - 3);
+      dl.set(clamp(ptr.first0 - Math.round(dy / dl.step), 0, dl.count - dl.vis));
     }
   });
-  function endPointer(e) {
+  function endPointer() {
     if (!ptr) return;
     clearTimeout(ptr.timer);
     const p = ptr; ptr = null;
@@ -812,36 +952,65 @@
   }
   cv.addEventListener("pointerup", endPointer);
   cv.addEventListener("pointercancel", () => { if (ptr) clearTimeout(ptr.timer); ptr = null; });
+  function listRowAt(y, first, count) {
+    if (y < DEV_Y || y >= DEV_Y + 3 * DEV_STEP) return -1;
+    const i = first + Math.floor((y - DEV_Y) / DEV_STEP);
+    return i < count ? i : -1;
+  }
   function tap(x, y) {
-    if (state.page === 0) {
+    const p = state.page;
+    if (p < 3) {
       if (state.pick < 0) return;
       if (hit(PICK_CANCEL, x, y)) { state.pick = -1; return; }
-      const i = CH.findIndex((_, k) => hit(pickRect(k), x, y));
+      if (hit(PICK_PREV, x, y)) { state.pickPage = (state.pickPage + pickPages() - 1) % pickPages(); return; }
+      if (hit(PICK_NEXT, x, y)) { state.pickPage = (state.pickPage + 1) % pickPages(); return; }
+      const i = CH.findIndex((_, k) => Math.floor(k / PICK_PER_PAGE) === state.pickPage && hit(pickRect(k), x, y));
       if (i >= 0) { state.cards[state.pick] = i; state.pick = -1; }
-    } else if (state.page === 1) {
-      if (hit(PEAK_RESET, x, y)) state.peak = { rpm: NaN, spd: NaN, clt: NaN, boost: NaN, zs: 0, start: 0, last: 0, best: 0 };
-    } else if (state.page === 2) {
+    } else if (p === 3) {
       const d = state.dev;
-      if (d.kb) { kbTap(x * SX, y * SY); return; }
       if (d.scanning || d.connectAt) return;
-      if (hit(DEV_SCAN, x, y)) { d.scanning = true; d.scanUntil = performance.now() + 1600; d.list = []; d.first = 0; state.online = false; }
-      else if (hit(DEV_DISC, x, y)) { d.live = -1; state.online = false; d.status = "Disconnected"; }
-      else if (y >= 66 && y < 216) {
-        const i = d.first + Math.floor((y - 66) / 50);
-        if (i >= d.list.length) return;
-        const e = d.list[i];
-        if (!e.ble && e.lock && (x >= 220 || i !== d.live)) d.kb = { idx: i, ssid: e.name, text: "", mode: 0, show: false, msg: "" };
-        else devConnect(i);
+      if (hit(LIST_BTN, x, y)) { d.scanning = true; d.scanUntil = performance.now() + 1600; d.list = []; d.first = 0; state.online = false; return; }
+      const i = listRowAt(y, d.first, d.list.length);
+      if (i < 0) return;
+      if (i === d.live && state.online) { if (x >= 196) { d.live = -1; state.online = false; } return; }
+      d.picked = i; d.live = -1; state.online = false; d.connectAt = performance.now() + 1800;
+    } else if (p === 4) {
+      const c = state.conn;
+      if (state.dev.kb) { kbTap(x * SX, y * SY); return; }
+      if (c.listOpen) {
+        if (c.scanning) return;
+        if (hit(LIST_BACK, x, y)) { c.listOpen = false; return; }
+        if (hit(LIST_BTN, x, y)) { c.scanning = true; c.scanUntil = performance.now() + 1400; c.nets = []; c.first = 0; return; }
+        const i = listRowAt(y, c.first, c.nets.length);
+        if (i < 0) return;
+        const e = c.nets[i];
+        c.ssid = e.name; c.lock = e.lock; c.pass = ""; c.connected = false; c.status = "Not connected"; c.note = ""; c.listOpen = false;
+        if (e.lock) state.dev.kb = { idx: i, ssid: e.name, text: "", mode: 0, show: false, msg: "" };
+        return;
       }
-    } else if (state.page === 3) limitsTap(x, y);
-    else if (state.page === 4) logTap(x, y);
-    else if (state.page === 5) dtcTap(x, y);
-    else if (state.page === 6) sysTap(x, y);
+      for (let i = 0; i < 4; i++) {
+        if (!hit(connRow(i), x, y)) continue;
+        if (i === 1) { c.listOpen = true; c.first = 0; }
+        else if (i === 2) { if (c.ssid && c.lock) state.dev.kb = { idx: 0, ssid: c.ssid, text: c.pass, mode: 0, show: false, msg: "" }; else c.note = c.ssid ? "This network needs no password" : "Select a network first"; }
+        else if (i === 3) {
+          if (c.connected) { c.connected = false; c.status = "Not connected"; }
+          else if (!c.ssid) c.note = "Select a network first";
+          else if (c.lock && !c.pass) state.dev.kb = { idx: 0, ssid: c.ssid, text: "", mode: 0, show: false, msg: "" };
+          else if (!c.at) connectWifi();
+        }
+        return;
+      }
+    } else if (p === 5) sysTap(x, y);
+    else if (p === 6) limitsTap(x, y);
+    else if (p === 7) { if (!state.log.graph && x >= 200 && y < 26) state.page = 5; else logTap(x, y); }
+    else if (p === 8) { if (x >= 200 && y < 26) state.page = 5; else dtcTap(x, y); }
+    else if (p === 9) fwTap(x, y);
   }
   function go(dir) {
     if (modal()) return;
-    state.page = (state.page + dir + PAGES.length) % PAGES.length;
-    if (state.page !== 0) state.pick = -1;
+    state.pick = -1;
+    if (state.page > 5) { state.page = 5; return; }  // a page that opens from SYSTEM: a swipe goes back
+    state.page = clamp(state.page + dir, 0, 5);
   }
   document.getElementById("prev").onclick = () => { state.pick = -1; state.dev.kb = null; go(-1); };
   document.getElementById("next").onclick = () => { state.pick = -1; state.dev.kb = null; go(1); };
@@ -853,9 +1022,9 @@
     const sc = SCENES.find((x) => x.id === id);
     state.scene = id;
     Object.assign(state.target, { rpm: sc.rpm, spd: sc.spd, clt: sc.clt, tps: sc.tps, map: sc.map, v: sc.v });
-    if (!sc.on) { state.online = false; state.dev.live = -1; state.dev.status = "Car off: no answer"; }
+    if (!sc.on) { state.online = false; state.dev.live = -1; }
     else if (!state.online && !state.dev.connectAt && state.dev.picked >= 0 && state.dev.list.length) {
-      state.online = true; state.dev.live = state.dev.picked; state.dev.status = "CONNECTED";
+      state.online = true; state.dev.live = state.dev.picked;
     }
     if (sc.on && state.dev.live >= 0) state.online = true;
     [...sceneBox.children].forEach((b) => b.classList.toggle("on", b.dataset.id === id));
@@ -867,17 +1036,29 @@
     sceneBox.appendChild(b);
   });
   state.dev.list = DEVICES.slice(); state.dev.live = 0; state.dev.picked = 0;
+  state.conn.nets = NETWORKS.slice();
   setScene("idle");
-  // Links can open a page or a state: demo.html#page=3, #scene=pull, #pick=1 (picker of card 2), #kb (WiFi keyboard).
+  // Links can open a page or a state: demo.html#page=3, #scene=pull, #pick=1 (picker of slot 2), #kb (Wi-Fi keyboard),
+  // #wifi (connected), #alert / #alertedit, #fw=confirm / #fw=progress, #graph.
   const hp = new URLSearchParams(location.hash.slice(1).replace(/&/g, "&"));
   if (hp.has("scene") && SCENES.some((x) => x.id === hp.get("scene"))) {
     setScene(hp.get("scene"));
     Object.assign(state.shown, state.target);
   }
   if (hp.has("page")) state.page = clamp(parseInt(hp.get("page"), 10) || 0, 0, PAGES.length - 1);
-  if (hp.has("pick")) { state.page = 0; state.pick = clamp(parseInt(hp.get("pick"), 10) || 0, 0, 8); }
-  if (hp.has("kb")) { state.page = 2; state.dev.kb = { idx: 2, ssid: "V-LINK", text: "rocky123", mode: 0, show: false, msg: "" }; }
-  if (hp.has("graph")) { state.page = 4; state.log.open = 11; state.log.graph = true; }
+  if (hp.has("pick")) { state.page = 0; state.pick = clamp(parseInt(hp.get("pick"), 10) || 0, 0, 14); state.pickPage = Math.floor(state.cards[state.pick] / PICK_PER_PAGE); }
+  if (hp.has("wifi")) Object.assign(state.conn, { ssid: "V-LINK", lock: true, pass: "rocky123", connected: true, status: "Connected" });
+  if (hp.has("kb")) { state.page = 4; state.conn.ssid = "V-LINK"; state.conn.lock = true; state.dev.kb = { idx: 0, ssid: "V-LINK", text: "rocky123", mode: 0, show: false, msg: "" }; }
+  if (hp.has("alert")) { state.page = 6; }
+  if (hp.has("alertedit")) { state.page = 6; state.lim.edit = 0; state.lim.val = state.thresh[0]; }
+  if (hp.has("fw")) {
+    state.page = 9;
+    Object.assign(state.conn, { ssid: "V-LINK", lock: true, pass: "rocky123", connected: true, status: "Connected" });
+    state.fw.sd = state.fw.online;
+    if (hp.get("fw") === "confirm") state.fw.view = "confirm";
+    if (hp.get("fw") === "progress") Object.assign(state.fw, { view: "progress", title: "Downloading", sub: "dash35-" + state.fw.online + ".bin", start: performance.now() - 900, dur: 1e9, done: "download" });
+  }
+  if (hp.has("graph")) { state.page = 7; state.log.open = 11; state.log.graph = true; }
   (document.fonts ? document.fonts.load("700 40px Rajdhani") : Promise.resolve()).finally(() => requestAnimationFrame(tick));
   </script>
 </body>

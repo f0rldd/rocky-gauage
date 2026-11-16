@@ -7,7 +7,7 @@
   <meta name="description" content="เกจดิจิทัลต่อ OBD2 ผ่าน ELM327 (WiFi / BLE) แสดงรอบ ความเร็ว น้ำ คันเร่ง MAP แบตเตอรี่ บนจอสัมผัส เตือนรอบ อ่านโค้ดเสีย บันทึกล็อกเซ็นและเข้ารหัส อัพเดทเฟิร์มแวร์ผ่านเว็บ">
   <meta property="og:title" content="R0CKY GAUGES — เกจดิจิทัล OBD2">
   <meta property="og:description" content="เกจดิจิทัลจอสัมผัส ต่อ ELM327 ไร้สาย บันทึกล็อกเซ็นและเข้ารหัส อัพเดทผ่านเว็บ">
-  <meta property="og:image" content="img/dash35-dash.png">
+  <meta property="og:image" content="img/dash35-values1.png">
   <meta name="theme-color" content="#070707">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -299,12 +299,7 @@
           </div>
         </div>
         <div class="device-stage">
-          <div class="device"><div class="screen" id="heroScreen"><img id="heroShot" src="img/dash35-dash.png" width="480" height="320" alt="หน้าจอ DASH ของเกจจอ 3.5 นิ้ว"></div></div>
-          <div class="swatches" role="group" aria-label="เลือกขนาดจอ">
-            <span>ขนาดจอ</span>
-            <button class="size" data-img="img/dash35-dash.png" data-ratio="3 / 2" data-alt="หน้าจอ DASH ของเกจจอ 3.5 นิ้ว" aria-pressed="true">3.5"</button>
-            <button class="size" data-img="img/dash28-dash.png" data-ratio="4 / 3" data-alt="หน้าจอ DASH ของเกจจอ 2.8 นิ้ว" aria-pressed="false">2.8"</button>
-          </div>
+          <div class="device"><div class="screen" id="heroScreen"><img id="heroShot" src="img/dash35-values1.png" width="480" height="320" alt="หน้าค่าของเกจจอ 3.5 นิ้ว"></div></div>
         </div>
       </div>
     </section>
@@ -312,7 +307,7 @@
     <div class="stats">
       <div class="wrap">
         <div class="stat"><b>25</b><span>ค่าให้เลือกแสดงบนจอ</span></div>
-        <div class="stat"><b>7</b><span>หน้าจอ ปัดเปลี่ยนหน้า</span></div>
+        <div class="stat"><b>6</b><span>หน้าจอ ปัดเปลี่ยนหน้า</span></div>
         <div class="stat"><b>2</b><span>ขนาดจอ 2.8" และ 3.5"</span></div>
         <div class="stat"><b>OTA</b><span>อัพเดทผ่านเว็บหรือการ์ด SD</span></div>
       </div>
@@ -335,17 +330,17 @@
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z"/><path d="M12 10v4"/><circle cx="12" cy="17" r=".6"/></svg></div>
             <h3>เตือนเมื่อเกินลิมิต</h3>
-            <p>ตั้งค่าเตือนรอบ ความเร็ว น้ำ คันเร่ง MAP และแบตต่ำ ทั้งหน้าจอเปลี่ยนเป็นสีแดงเต็มจอทันทีที่เกินค่าที่ตั้ง</p>
+            <p>ตั้งค่าเตือนรอบ ความเร็ว น้ำ คันเร่ง MAP และแบตต่ำ มีแถบเตือนสีเหลืองขึ้นด้านล่างจอทันทีที่เกินค่าที่ตั้ง และตัวเลข RPM เป็นสีแดงเมื่อใกล้รอบเตือน เปิด/ปิดแต่ละค่าได้ที่ SYSTEM &gt; ALERT LIMIT</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/><path d="M7 4v16M17 4v16" opacity=".4"/><circle cx="12" cy="12" r="2.5"/></svg></div>
             <h3>อ่านและล้างโค้ดเสีย (DTC)</h3>
-            <p>อ่านโค้ดที่เก็บไว้และโค้ดที่รอยืนยัน แล้วล้างไฟเตือนได้จากหน้าจอ มีขั้นตอนยืนยันก่อนล้างทุกครั้ง</p>
+            <p>อ่านโค้ดที่เก็บไว้และโค้ดที่รอยืนยัน แล้วล้างไฟเตือนได้จาก SYSTEM &gt; TROUBLE CODES มีขั้นตอนยืนยันก่อนล้างทุกครั้ง</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><path d="M6 20v-6M11 20V8M16 20v-9"/><path d="M4 7l4-3 4 3 4-3 4 3" opacity=".4"/></svg></div>
-            <h3>บูสต์ ค่าสูงสุด และจับเวลา 0-100</h3>
-            <p>หน้า BOOST &amp; PEAK โชว์บูสต์เป็น bar พร้อมค่าสูงสุด เก็บรอบ ความเร็ว และน้ำสูงสุดของรอบนั้น จับเวลา 0-100 กม./ชม. ให้เองเมื่อออกตัว กด RESET เพื่อล้างค่า</p>
+            <h3>บูสต์</h3>
+            <p>เลือก BOOST ไปแสดงในช่องไหนของหน้าค่าก็ได้ คำนวณจาก MAP ลบ 101 kPa ค่าลบคือสุญญากาศ ค่าบวกคือมีบูสต์</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></div>
@@ -354,18 +349,18 @@
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.2 15.5a5.6 5.6 0 0 1 7.6 0"/><circle cx="12" cy="18.5" r="1.2"/></svg></div>
-            <h3>WiFi และ Bluetooth LE</h3>
-            <p>สแกนแล้วแตะเลือกอะแดปเตอร์ได้ในหน้าจอ รหัสผ่าน WiFi พิมพ์ผ่านแป้นพิมพ์บนจอ จำการเชื่อมต่อและต่อใหม่อัตโนมัติเมื่อเปิดรถ</p>
+            <h3>Bluetooth และ WiFi</h3>
+            <p>หน้า DEVICE สแกนแล้วแตะเลือก ELM327 Bluetooth ส่วนหน้า CONNECTION ตั้ง WiFi สำหรับดาวน์โหลดเฟิร์มแวร์ รหัสผ่านพิมพ์ผ่านแป้นพิมพ์บนจอ จำการเชื่อมต่อและต่อใหม่อัตโนมัติเมื่อเปิดรถ</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 4v10"/><path d="M8 10l4 4 4-4"/><path d="M5 19h14"/></svg></div>
             <h3>อัพเดทเฟิร์มแวร์เอง</h3>
-            <p>กดโหลดจากเว็บแล้วแฟลชจากหน้าจอได้เลย หรือใส่ไฟล์ในการ์ด SD เห็นเลขรุ่นปัจจุบัน รุ่นในการ์ด และรุ่นบนเว็บเทียบกัน</p>
+            <p>ที่ SYSTEM &gt; FIRMWARE กด DOWNLOAD แล้ว INSTALL ได้เลย (มีหน้ายืนยันก่อนเขียน) หรือใส่ไฟล์ในการ์ด SD เห็นเลขรุ่นที่ติดตั้ง รุ่นในการ์ด และรุ่นบนเว็บเทียบกัน</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><circle cx="12" cy="16" r="3"/></svg></div>
             <h3>อ่านง่ายในพริบตา</h3>
-            <p>หน้า DASH เป็นการ์ด 9 ช่อง ตัวเลขใหญ่ แต่ละช่องมีสีของตัวเอง กดค้างที่การ์ดเพื่อเปลี่ยนค่าที่แสดง จอ 2.8" และ 3.5" หน้าตาเหมือนกันทุกหน้า</p>
+            <p>พื้นดำ ตัวเลขขาวใหญ่ ชื่อค่าและหน่วยสีเทา ไม่มีโลโก้มากวนสายตา ปัดได้ 3 หน้าค่า: 9 ค่า (จอ 2.8" 4 ค่า) 4 ค่า และ 2 ค่าตัวใหญ่ กดค้างที่ตัวเลขเพื่อเปลี่ยนค่าที่แสดง จอ 2.8" และ 3.5" หน้าตาเหมือนกัน</p>
           </article>
           <article class="feature reveal">
             <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h3l2-6 4 12 2-6h5"/></svg></div>
@@ -382,25 +377,25 @@
         <div class="sec-head reveal">
           <span class="eyebrow">Readings</span>
           <h2>ค่าที่อ่านได้ และแต่ละค่าคืออะไร</h2>
-          <p>หน้า DASH มีการ์ด 9 ช่อง <b style="color:#fff">กดค้างที่การ์ดประมาณครึ่งวินาที</b> แล้วเลือกได้ว่าการ์ดนั้นแสดงค่าไหนจาก 25 ค่าด้านล่าง เกจจำค่าที่เลือกไว้ ปิดเปิดใหม่ก็ยังอยู่</p>
+          <p>หน้าค่า 1 มี 9 ค่า (จอ 2.8" มี 4 ค่า) <b style="color:#fff">กดค้างที่ตัวเลขประมาณครึ่งวินาที</b> แล้วเลือกได้ว่าช่องนั้นแสดงค่าไหนจาก 25 ค่าด้านล่าง แต่ละหน้าจำค่าของตัวเองแยกกัน ปิดเปิดใหม่ก็ยังอยู่</p>
         </div>
-        <p class="vals-note reveal">ป้าย <span style="font:600 10px/1 Oswald,sans-serif;letter-spacing:.1em;padding:3px 6px;border-radius:6px;background:var(--accent);color:#fff">DASH</span> คือค่าที่การ์ดแสดงตอนเริ่มต้น · <b>ล็อก</b> บันทึกทุกค่าที่รถรองรับลงการ์ด SD เสมอ ไม่ว่าจะแสดงบนจอหรือไม่ (ยกเว้น BOOST ที่คำนวณจาก MAP ได้ภายหลัง) · คอลัมน์ "ชื่อในล็อก" คือชื่อช่องใน R0CKY LogViewer</p>
+        <p class="vals-note reveal">ป้าย <span style="font:600 10px/1 Oswald,sans-serif;letter-spacing:.1em;padding:3px 6px;border-radius:6px;background:var(--accent);color:#fff">เริ่มต้น</span> คือค่าที่หน้าค่า 1 แสดงตอนเริ่มต้น · <b>ล็อก</b> บันทึกทุกค่าที่รถรองรับลงการ์ด SD เสมอ ไม่ว่าจะแสดงบนจอหรือไม่ (ยกเว้น BOOST ที่คำนวณจาก MAP ได้ภายหลัง) · คอลัมน์ "ชื่อในล็อก" คือชื่อช่องใน R0CKY LogViewer</p>
         <div class="vals-wrap reveal">
           <table class="vals">
             <thead><tr><th>บนจอ</th><th>คืออะไร</th><th>หน่วย</th><th>คำสั่ง OBD</th><th>ชื่อในล็อก</th></tr></thead>
             <tbody>
                 <tr class="grp"><th colspan="5">6 ค่าหลัก อ่านตลอดเวลา อัพเดทเร็วที่สุด · รถแทบทุกคันมี</th></tr>
-                <tr><td>SPEED<span class="def">DASH</span></td><td>ความเร็วรถ<small>ปรับให้ตรงกับมาตรวัดรถได้ที่หน้า ALERT LIMITS (SPEED CAL)</small></td><td>km/h</td><td><code>010D</code></td><td><code>SPEED</code></td></tr>
-                <tr><td>RPM<span class="def">DASH</span></td><td>รอบเครื่องยนต์<small>ตัวเลขเป็นสีแดงเมื่อถึง 90% ของรอบที่ตั้งเตือน</small></td><td>rpm</td><td><code>010C</code></td><td><code>RPM</code></td></tr>
-                <tr><td>MAP<span class="def">DASH</span></td><td>แรงดันสัมบูรณ์ในท่อร่วมไอดี<small>ดับเครื่องประมาณ 100 · เดินเบาประมาณ 30–40 · เกิน 101 คือมีบูสต์</small></td><td>kPa</td><td><code>010B</code></td><td><code>MAP</code></td></tr>
-                <tr><td>THROTTLE<span class="def">DASH</span></td><td>ตำแหน่งลิ้นปีกผีเสื้อ</td><td>%</td><td><code>0111</code></td><td><code>TPS</code></td></tr>
-                <tr><td>COOLANT<span class="def">DASH</span></td><td>อุณหภูมิน้ำหล่อเย็น</td><td>°C</td><td><code>0105</code></td><td><code>COOLANT</code></td></tr>
-                <tr><td>BATT<span class="def">DASH</span></td><td>แรงดันไฟที่ ECU วัดได้<small>เครื่องติดปกติประมาณ 13.5–14.5</small></td><td>V</td><td><code>0142</code></td><td><code>VOLT</code></td></tr>
+                <tr><td>SPEED<span class="def">เริ่มต้น</span></td><td>ความเร็วรถ<small>ปรับให้ตรงกับมาตรวัดรถได้ที่ SYSTEM &gt; SPEED CAL</small></td><td>km/h</td><td><code>010D</code></td><td><code>SPEED</code></td></tr>
+                <tr><td>RPM<span class="def">เริ่มต้น</span></td><td>รอบเครื่องยนต์<small>ตัวเลขเป็นสีแดงเมื่อถึง 90% ของรอบที่ตั้งเตือน</small></td><td>rpm</td><td><code>010C</code></td><td><code>RPM</code></td></tr>
+                <tr><td>MAP<span class="def">เริ่มต้น</span></td><td>แรงดันสัมบูรณ์ในท่อร่วมไอดี<small>ดับเครื่องประมาณ 100 · เดินเบาประมาณ 30–40 · เกิน 101 คือมีบูสต์</small></td><td>kPa</td><td><code>010B</code></td><td><code>MAP</code></td></tr>
+                <tr><td>THROTTLE<span class="def">เริ่มต้น</span></td><td>ตำแหน่งลิ้นปีกผีเสื้อ</td><td>%</td><td><code>0111</code></td><td><code>TPS</code></td></tr>
+                <tr><td>COOLANT<span class="def">เริ่มต้น</span></td><td>อุณหภูมิน้ำหล่อเย็น</td><td>°C</td><td><code>0105</code></td><td><code>COOLANT</code></td></tr>
+                <tr><td>BATT<span class="def">เริ่มต้น</span></td><td>แรงดันไฟที่ ECU วัดได้<small>เครื่องติดปกติประมาณ 13.5–14.5</small></td><td>V</td><td><code>0142</code></td><td><code>VOLT</code></td></tr>
                 <tr class="grp"><th colspan="5">คำนวณจากค่าหลัก</th></tr>
-                <tr><td>BOOST<span class="def">DASH</span></td><td>แรงดันบูสต์ = MAP − 101 kPa<small>ค่าลบคือสุญญากาศ (เดินเบา ถอนคันเร่ง) ค่าบวกคือมีบูสต์ · ใช้ความดันบรรยากาศคงที่ 101 kPa</small></td><td>bar</td><td>จาก MAP</td><td><code>–</code></td></tr>
+                <tr><td>BOOST<span class="def">เริ่มต้น</span></td><td>แรงดันบูสต์ = MAP − 101 kPa<small>ค่าลบคือสุญญากาศ (เดินเบา ถอนคันเร่ง) ค่าบวกคือมีบูสต์ · ใช้ความดันบรรยากาศคงที่ 101 kPa</small></td><td>bar</td><td>จาก MAP</td><td><code>–</code></td></tr>
                 <tr class="grp"><th colspan="5">ค่าเพิ่มเติม อัพเดทประมาณทุก 1–3 วินาที · ขึ้นกับรุ่นรถ ถ้ารถไม่ส่งค่าจะขึ้น --</th></tr>
-                <tr><td>TIMING<span class="def">DASH</span></td><td>องศาจุดระเบิดล่วงหน้า</td><td>องศา</td><td><code>010E</code></td><td><code>TIMING</code></td></tr>
-                <tr><td>AFR<span class="def">DASH</span></td><td>อัตราส่วนอากาศต่อน้ำมันที่วัดได้<small>14.7 = สมบูรณ์ · ต่ำกว่าคือหนา สูงกว่าคือบาง · ต้องเป็นรถที่มีเซนเซอร์ O2 แบบไวด์แบนด์</small></td><td>–</td><td><code>0134</code></td><td><code>AFR_MEAS</code></td></tr>
+                <tr><td>TIMING<span class="def">เริ่มต้น</span></td><td>องศาจุดระเบิดล่วงหน้า</td><td>องศา</td><td><code>010E</code></td><td><code>TIMING</code></td></tr>
+                <tr><td>AFR<span class="def">เริ่มต้น</span></td><td>อัตราส่วนอากาศต่อน้ำมันที่วัดได้<small>14.7 = สมบูรณ์ · ต่ำกว่าคือหนา สูงกว่าคือบาง · ต้องเป็นรถที่มีเซนเซอร์ O2 แบบไวด์แบนด์</small></td><td>–</td><td><code>0134</code></td><td><code>AFR_MEAS</code></td></tr>
                 <tr><td>AFR CMD</td><td>อัตราส่วนอากาศต่อน้ำมันที่ ECU สั่ง<small>เทียบกับ AFR ที่วัดได้ว่า ECU คุมได้ตามที่ต้องการไหม</small></td><td>–</td><td><code>0144</code></td><td><code>AFR_CMD</code></td></tr>
                 <tr><td>INJ DUTY</td><td>ภาระงานหัวฉีด (injector duty)<small>ใช้คำสั่งเฉพาะรุ่นรถ ร้านต้องตั้งให้ก่อน ถ้ายังไม่ตั้งจะขึ้น --</small></td><td>%</td><td>เฉพาะรุ่น</td><td><code>INJ_DUTY</code></td></tr>
                 <tr><td>LOAD</td><td>โหลดเครื่องยนต์ที่ ECU คำนวณ</td><td>%</td><td><code>0104</code></td><td><code>LOAD</code></td></tr>
@@ -429,30 +424,30 @@
       <div class="wrap">
         <div class="sec-head reveal">
           <span class="eyebrow">On Screen</span>
-          <h2>หน้าจอจริงจากเกจทั้งสองขนาด</h2>
-          <p>ทั้งหมดนี้คือภาพที่จับจากหน้าจอของบอร์ดจริง ไม่ใช่ภาพตกแต่ง (จอ 3.5" ใช้ค่าตัวอย่างจากโหมดสาธิต จอ 2.8" ต่อรถจำลองอยู่) ปัดซ้าย-ขวาเพื่อเปลี่ยนหน้า</p>
+          <h2>หน้าจอของเกจ</h2>
+          <p>ภาพจากหน้า<a href="demo.html" style="color:var(--accent)">สาธิต</a> วาดด้วยเลย์เอาต์เดียวกับเฟิร์มแวร์จริงของจอ 3.5" (ค่าเป็นตัวอย่าง) จอ 2.8" หน้าตาเหมือนกันแต่แสดง 4 / 2 / 1 ค่าต่อหน้า ปัดซ้าย-ขวาเพื่อเปลี่ยนหน้า</p>
         </div>
         <div class="gallery">
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dash.png" width="480" height="320" alt="หน้า DASH จอ 3.5 นิ้ว"></div>
-            <figcaption><b>DASH</b>การ์ด 9 ช่อง ตัวเลขใหญ่ อ่านง่ายตอนขับ กดค้างที่การ์ดเพื่อเลือกค่าที่แสดง</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-peak.png" width="480" height="320" alt="หน้า BOOST &amp; PEAK จอ 3.5 นิ้ว"></div>
-            <figcaption><b>BOOST &amp; PEAK</b>บูสต์เป็น bar พร้อมค่าสูงสุด จับเวลา 0-100 และค่าสูงสุดของรอบ ความเร็ว น้ำ</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-limits.png" width="480" height="320" alt="หน้า ALERT LIMITS จอ 3.5 นิ้ว"></div>
-            <figcaption><b>ALERT LIMITS</b>ตั้งค่าเตือนแต่ละค่า เกินเมื่อไหร่จอเป็นสีแดงเต็มจอ และปรับความเร็วให้ตรงมาตรวัด</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-dtc.png" width="480" height="320" alt="หน้า TROUBLE CODES จอ 3.5 นิ้ว"></div>
-            <figcaption><b>TROUBLE CODES</b>อ่าน STORED / PENDING บอกระบบที่โค้ดเกี่ยว และล้างโค้ดเสียได้จากหน้าจอ</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-values1.png" width="480" height="320" alt="หน้า หน้าค่า 1 จอ 3.5 นิ้ว"></div>
+            <figcaption><b>หน้าค่า 1</b>9 ค่า (3 x 3) พื้นดำ ตัวเลขขาวใหญ่ RPM เป็นสีแดงเมื่อใกล้รอบเตือน กดค้างที่ตัวเลขเพื่อเลือกค่าที่แสดง</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-values2.png" width="480" height="320" alt="หน้า หน้าค่า 2 จอ 3.5 นิ้ว"></div>
+            <figcaption><b>หน้าค่า 2</b>4 ค่า (2 x 2) ตัวเลขใหญ่ขึ้น แต่ละหน้าจำค่าของตัวเองแยกกัน</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-values3.png" width="480" height="320" alt="หน้า หน้าค่า 3 จอ 3.5 นิ้ว"></div>
+            <figcaption><b>หน้าค่า 3</b>2 ค่าซ้ายขวา ตัวเลขใหญ่สุด มองเหลือบเดียวก็รู้</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-picker.png" width="480" height="320" alt="หน้า เลือกค่าที่แสดง จอ 3.5 นิ้ว"></div>
+            <figcaption><b>เลือกค่าที่แสดง</b>กดค้างที่ตัวเลขแล้วเลือกได้ 25 ค่า ค่าที่แสดงอยู่เป็นปุ่มสีส้ม</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-device.png" width="480" height="320" alt="หน้า DEVICE จอ 3.5 นิ้ว"></div>
+            <figcaption><b>DEVICE</b>สแกนหา ELM327 Bluetooth ตัวที่ต่ออยู่มีแถบสีและคำว่า Connected กด Disconnect เพื่อตัด</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-connection.png" width="480" height="320" alt="หน้า CONNECTION จอ 3.5 นิ้ว"></div>
+            <figcaption><b>CONNECTION</b>Wi-Fi สำหรับดาวน์โหลดเฟิร์มแวร์ เลือกเครือข่าย ใส่รหัสผ่าน แล้วกด Connect</figcaption></figure>
           <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-system.png" width="480" height="320" alt="หน้า SYSTEM จอ 3.5 นิ้ว"></div>
-            <figcaption><b>SYSTEM</b>เทียบรุ่นเฟิร์มแวร์ในเครื่อง ในการ์ด และบนเว็บ ดาวน์โหลดแล้วแฟลชจากหน้าจอได้เลย</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-dash.png" width="640" height="480" alt="หน้า DASH จอ 2.8 นิ้ว"></div>
-            <figcaption><b>DASH จอ 2.8"</b>หน้าตาเดียวกับจอ 3.5" ตัวอักษรแบบพิกเซลคมชัดบนจอขนาดเล็ก</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-pick.png" width="640" height="480" alt="หน้าเลือกค่าของการ์ด จอ 2.8 นิ้ว"></div>
-            <figcaption><b>เลือกค่าที่แสดง</b>กดค้างที่การ์ดบนหน้า DASH แล้วเลือกได้ 25 ค่า ค่าที่การ์ดแสดงอยู่เป็นปุ่มสีส้ม</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-peak.png" width="640" height="480" alt="หน้า BOOST &amp; PEAK จอ 2.8 นิ้ว"></div>
-            <figcaption><b>BOOST &amp; PEAK จอ 2.8"</b>ค่าสดขณะต่อรถ พร้อมเวลา 0-100 ที่จับได้</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-graph.png" width="640" height="480" alt="หน้า LOG GRAPH จอ 2.8 นิ้ว"></div>
-            <figcaption><b>LOG GRAPH จอ 2.8"</b>เปิดไฟล์ล็อกในการ์ด SD ดูกราฟรอบ ความเร็ว น้ำ และค่าต่ำสุด เฉลี่ย สูงสุด บนเกจได้เลย</figcaption></figure>
-          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash28-limits.png" width="640" height="480" alt="หน้า ALERT LIMITS จอ 2.8 นิ้ว"></div>
-            <figcaption><b>ALERT LIMITS จอ 2.8"</b>ปุ่ม - / + ใหญ่ กดง่ายบนจอสัมผัส</figcaption></figure>
+            <figcaption><b>SYSTEM</b>รายการตั้งค่าแบบเรียบ ปัดเลื่อนดูได้ และเปิดหน้าย่อย FIRMWARE, ALERT LIMIT, DRIVE LOGS, TROUBLE CODES</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-alert.png" width="480" height="320" alt="หน้า ALERT LIMIT จอ 3.5 นิ้ว"></div>
+            <figcaption><b>ALERT LIMIT</b>เปิด/ปิดการเตือนแต่ละค่าด้วยสวิตช์ แตะแถวเพื่อแก้ขีดจำกัด เกินแล้วมีแถบเตือนสีเหลืองขึ้นด้านล่างจอ</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-firmware.png" width="480" height="320" alt="หน้า FIRMWARE จอ 3.5 นิ้ว"></div>
+            <figcaption><b>FIRMWARE</b>เทียบรุ่นที่ติดตั้ง รุ่นในการ์ด SD และรุ่นบนเว็บ DOWNLOAD แล้ว INSTALL (มีหน้ายืนยันก่อนเขียน)</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-logs.png" width="480" height="320" alt="หน้า DRIVE LOGS จอ 3.5 นิ้ว"></div>
+            <figcaption><b>DRIVE LOGS</b>เปิดไฟล์ล็อกในการ์ด SD ดูกราฟรอบ ความเร็ว น้ำ และค่าต่ำสุด เฉลี่ย สูงสุด บนเกจได้เลย</figcaption></figure>
         </div>
       </div>
     </section>
@@ -476,7 +471,7 @@
               <tr><th>การควบคุม</th><td>จอสัมผัส ปัดเปลี่ยนหน้า</td></tr>
               <tr><th>เชื่อมต่อรถ</th><td>ELM327 ผ่าน WiFi หรือ BLE</td></tr>
               <tr><th>ที่เก็บข้อมูล</th><td>การ์ด microSD (ล็อก / อัพเดท)</td></tr>
-              <tr><th>เฟิร์มแวร์ล่าสุด</th><td><span data-ver="28">1.17.0</span></td></tr>
+              <tr><th>เฟิร์มแวร์ล่าสุด</th><td><span data-ver="28">1.20.3</span></td></tr>
             </table>
             <div class="btns">
               <a class="btn ghost small" href="demo.html">ลองสาธิต</a>
@@ -550,13 +545,13 @@
           <details><summary>ใช้กับรถรุ่นไหนได้บ้าง</summary>
             <p>รถที่มีช่องวินิจฉัย OBD2 และใช้งานกับ ELM327 ได้ ค่าที่อ่านเป็นค่ามาตรฐาน OBD2 (ดู<a href="#values" style="color:var(--accent)">ตารางค่าที่อ่านได้</a>) 6 ค่าหลักมีในรถแทบทุกคัน ค่าอื่นขึ้นกับรุ่นรถ ส่วน injector duty ต้องตั้งคำสั่งเฉพาะรุ่นรถ ซึ่งเราเตรียมแนวทางไว้สำหรับ Honda บางรุ่น (FD, FB, GE, GK, FC) สอบถามรุ่นรถของคุณก่อนสั่งได้</p></details>
           <details><summary>ทำไมบางช่องขึ้น --</summary>
-            <p>แปลว่ายังไม่ได้ค่าจากรถ ถ้ายังไม่ได้ต่อ ELM327 ทุกช่องจะขึ้น -- ถ้าต่อแล้วแต่ช่องไหนยังขึ้น -- อยู่ แปลว่า ECU ของรถคันนั้นไม่ส่งค่านั้น (รถแต่ละรุ่นรองรับไม่เท่ากัน) กดค้างที่การ์ดแล้วเลือกค่าอื่นแทนได้</p></details>
+            <p>แปลว่ายังไม่ได้ค่าจากรถ ถ้ายังไม่ได้ต่อ ELM327 ทุกช่องจะขึ้น -- ถ้าต่อแล้วแต่ช่องไหนยังขึ้น -- อยู่ แปลว่า ECU ของรถคันนั้นไม่ส่งค่านั้น (รถแต่ละรุ่นรองรับไม่เท่ากัน) กดค้างที่ตัวเลขแล้วเลือกค่าอื่นแทนได้</p></details>
           <details><summary>ต้องใช้ ELM327 แบบไหน</summary>
             <p>ELM327 ที่เป็น WiFi หรือ Bluetooth LE (BLE) เกจเชื่อมต่อแบบไร้สายและจำอุปกรณ์ที่เลือกไว้ พอเปิดรถก็ต่อให้เองโดยอัตโนมัติ</p></details>
           <details><summary>ใส่รหัสผ่าน WiFi อย่างไร</summary>
-            <p>ที่หน้า DEVICES กด SCAN แล้วแตะชื่อ WiFi ที่มีรหัส จะมีแป้นพิมพ์ขึ้นมาให้พิมพ์รหัสผ่านบนจอ (ทั้งจอ 2.8" และ 3.5") แล้วกด OK</p></details>
+            <p>ที่หน้า CONNECTION แตะ NETWORK แล้ว SCAN เลือกชื่อ WiFi ที่มีรหัส จะมีแป้นพิมพ์ขึ้นมาให้พิมพ์รหัสผ่านบนจอ (ทั้งจอ 2.8" และ 3.5") แล้วกด OK จากนั้นกด Connect</p></details>
           <details><summary>อัพเดทเฟิร์มแวร์ยากไหม</summary>
-            <p>ไม่ยาก ต่อ WiFi ที่มีอินเทอร์เน็ต ไปหน้า FLASH ดูเลขรุ่นบนเว็บ กด DOWNLOAD แล้ว FLASH (กดซ้ำเพื่อยืนยัน) หรือโหลดไฟล์จากหน้าดาวน์โหลดไปใส่การ์ด SD เองก็ได้</p></details>
+            <p>ไม่ยาก ต่อ WiFi ที่มีอินเทอร์เน็ต ไปที่ SYSTEM &gt; FIRMWARE ดูเลขรุ่นบนเว็บ กด DOWNLOAD แล้ว INSTALL (มีหน้ายืนยันก่อนเขียน) หรือโหลดไฟล์จากหน้าดาวน์โหลดไปใส่การ์ด SD เองก็ได้</p></details>
           <details><summary>ไฟล์ล็อกเปิดดูได้อย่างไร</summary>
             <p>ถอดการ์ด SD ไปเสียบพีซี แล้วเปิดไฟล์ .rlog ด้วยโปรแกรม R0CKY LogViewer ไฟล์จะแสดงข้อมูลได้เมื่อมีกุญแจของร้าน จึงเปิดได้เฉพาะร้านที่ลงกุญแจให้บอร์ดนั้น</p></details>
           <details><summary>ต่างกันอย่างไรระหว่างจอ 2.8" กับ 3.5"</summary>
@@ -579,7 +574,7 @@
 
   <footer>
     <div class="wrap">
-      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.17.0</span> · จอ 3.5" <span data-ver="35">1.0.0</span></div>
+      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.20.3</span> · จอ 3.5" <span data-ver="35">1.0.0</span></div>
       <nav><a href="demo.html">สาธิต</a><a href="logviewer.html">LogViewer</a><a href="download.html">ดาวน์โหลดเฟิร์มแวร์</a><a href="#faq">คำถาม</a></nav>
     </div>
   </footer>

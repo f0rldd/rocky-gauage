@@ -99,7 +99,7 @@
     <header class="hero">
       <span class="eyebrow">Firmware</span>
       <h1>ดาวน์โหลดเฟิร์มแวร์</h1>
-      <p class="lead">เลือกไฟล์ให้ตรงกับขนาดจอของเกจ แล้วใส่ในการ์ด microSD หรือให้เกจโหลดเองผ่านหน้า FLASH เลขรุ่นด้านล่างดึงจากเซิร์ฟเวอร์อัพเดทโดยตรง</p>
+      <p class="lead">เลือกไฟล์ให้ตรงกับขนาดจอของเกจ แล้วใส่ในการ์ด microSD หรือให้เกจโหลดเองจากหน้า SYSTEM &gt; FIRMWARE เลขรุ่นด้านล่างดึงจากเซิร์ฟเวอร์อัพเดทโดยตรง</p>
     </header>
 
     <div class="cards">
@@ -107,13 +107,13 @@
         <div class="size">2.8<small>นิ้ว</small></div>
         <h3>เกจจอ 2.8"</h3>
         <p class="board">ESP32-2432S028R</p>
-        <p class="ver"><b data-ver="28">1.17.0</b><span>รุ่นล่าสุด</span></p>
+        <p class="ver"><b data-ver="28">1.20.3</b><span>รุ่นล่าสุด</span></p>
         <a class="btn" href="dash28.bin" download="dash.bin">
           <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
           ดาวน์โหลดสำหรับจอ 2.8"
         </a>
         <ul class="meta">
-          <li><span>ไฟล์</span><code>dash28-<span data-ver="28">1.17.0</span>.bin</code></li>
+          <li><span>ไฟล์</span><code>dash28-<span data-ver="28">1.20.3</span>.bin</code></li>
           <li><span>ชื่อในการ์ด SD</span><code>dash.bin</code></li>
         </ul>
         <p class="note">ไฟล์ที่ดาวน์โหลดถูกตั้งชื่อเป็น dash.bin ให้อยู่แล้ว วางที่รากการ์ด (ไม่ใส่ในโฟลเดอร์)</p>
@@ -146,17 +146,17 @@
           <ol>
             <li>ดาวน์โหลดไฟล์ของจอที่ใช้อยู่จากด้านบน</li>
             <li>คัดลอกไฟล์ไปที่รากการ์ด microSD</li>
-            <li>เสียบการ์ดเข้าเกจ เปิดเครื่อง ปัดไปหน้า FLASH</li>
-            <li>กด FLASH แล้วกดยืนยัน (CONFIRM FLASH) ภายใน 8 วินาที อย่าปิดไฟจนกว่าจะรีบูต</li>
+            <li>เสียบการ์ดเข้าเกจ เปิดเครื่อง ปัดไปหน้า SYSTEM แล้วแตะ FIRMWARE</li>
+            <li>แถว On SD card ขึ้นเลขรุ่น กด INSTALL แล้วกด INSTALL NOW ในหน้ายืนยัน อย่าปิดไฟจนกว่าจะรีบูต</li>
           </ol>
         </div>
         <div>
           <h3 style="margin:0 0 16px">ให้เกจโหลดเอง</h3>
           <ol>
-            <li>ต่อ WiFi ที่มีอินเทอร์เน็ตจากหน้า DEVICES</li>
-            <li>ปัดไปหน้า FLASH รอให้ช่อง WEB ขึ้นเลขรุ่น</li>
+            <li>ต่อ WiFi ที่มีอินเทอร์เน็ตจากหน้า CONNECTION (เลือกเครือข่าย ใส่รหัสผ่าน แล้วกด Connect)</li>
+            <li>ไปที่ SYSTEM &gt; FIRMWARE รอให้แถว Available online ขึ้นเลขรุ่น</li>
             <li>กด DOWNLOAD เกจจะเก็บไฟล์ลงการ์ด SD (ต้องมีการ์ดใส่อยู่)</li>
-            <li>กด FLASH แล้วกดยืนยัน อย่าปิดไฟจนกว่าจะรีบูต</li>
+            <li>กด INSTALL แล้วกด INSTALL NOW ในหน้ายืนยัน อย่าปิดไฟจนกว่าจะรีบูต</li>
           </ol>
         </div>
       </div>
