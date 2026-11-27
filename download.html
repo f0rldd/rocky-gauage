@@ -45,7 +45,10 @@
     .lead { color: var(--muted); max-width: 40rem; margin: 0; }
     header.hero { padding: clamp(40px, 6vw, 80px) 0 28px; }
 
-    .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 8px; }
+    h2.group { margin: 40px 0 16px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+    h2.group span { font: 400 15px/1.4 "Noto Sans Thai", sans-serif; color: var(--muted); }
+    header.hero + h2.group { margin-top: 8px; }
     .card { border: 1px solid var(--line2); border-radius: 22px; padding: 28px; background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015)); position: relative; scroll-margin-top: 90px; }
     .card.hot { border-color: rgba(255, 138, 0,0.6); box-shadow: 0 30px 70px -40px var(--glow); }
     .card .size { font: 400 54px/1 "Anton", sans-serif; }
@@ -99,18 +102,19 @@
     <header class="hero">
       <span class="eyebrow">Firmware</span>
       <h1>ดาวน์โหลดเฟิร์มแวร์</h1>
-      <p class="lead">เลือกไฟล์ให้ตรงกับขนาดจอของเกจ แล้วใส่ในการ์ด microSD หรือให้เกจโหลดเองจากหน้า SYSTEM &gt; FIRMWARE เลขรุ่นด้านล่างดึงจากเซิร์ฟเวอร์อัพเดทโดยตรง</p>
+      <p class="lead">เลือกไฟล์ให้ตรงกับขนาดจอ บอร์ด และรุ่นเกจ (OBD2 หรือ MaxxECU) แล้วใส่ในการ์ด microSD หรือให้เกจโหลดเองจากหน้า SYSTEM &gt; FIRMWARE เลขรุ่นด้านล่างดึงจากเซิร์ฟเวอร์อัพเดทโดยตรง</p>
     </header>
 
+    <h2 class="group">เกจ OBD2 <span>ต่อรถผ่านปลั๊ก OBD2 (ELM327 Bluetooth / Wi-Fi หรือสาย CAN ตรง)</span></h2>
     <div class="cards">
       <article class="card" id="fw28">
         <div class="size">2.8<small>นิ้ว</small></div>
-        <h3>เกจจอ 2.8"</h3>
+        <h3>เกจจอ 2.8" OBD2</h3>
         <p class="board">ESP32-2432S028R</p>
         <p class="ver"><b data-ver="28">1.20.3</b><span>รุ่นล่าสุด</span></p>
         <a class="btn" href="dash28.bin" download="dash.bin">
           <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
-          ดาวน์โหลดสำหรับจอ 2.8"
+          ดาวน์โหลด dash28.bin
         </a>
         <ul class="meta">
           <li><span>ไฟล์</span><code>dash28-<span data-ver="28">1.20.3</span>.bin</code></li>
@@ -118,25 +122,104 @@
         </ul>
         <p class="note">ไฟล์ที่ดาวน์โหลดถูกตั้งชื่อเป็น dash.bin ให้อยู่แล้ว วางที่รากการ์ด (ไม่ใส่ในโฟลเดอร์)</p>
       </article>
-
       <article class="card hot" id="fw35">
         <div class="size">3.5<small>นิ้ว</small></div>
-        <h3>เกจจอ 3.5" IPS</h3>
+        <h3>เกจจอ 3.5" IPS OBD2</h3>
         <p class="board">ES3C35P · ESP32-S3</p>
-        <p class="ver"><b data-ver="35">1.0.0</b><span>รุ่นล่าสุด</span></p>
+        <p class="ver"><b data-ver="35">…</b><span>รุ่นล่าสุด</span></p>
         <a class="btn" href="dash35.bin" download="dash35.bin">
           <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
-          ดาวน์โหลดสำหรับจอ 3.5"
+          ดาวน์โหลด dash35.bin
         </a>
         <ul class="meta">
-          <li><span>ไฟล์</span><code>dash35-<span data-ver="35">1.0.0</span>.bin</code></li>
+          <li><span>ไฟล์</span><code>dash35-<span data-ver="35">…</span>.bin</code></li>
           <li><span>ชื่อในการ์ด SD</span><code>dash35.bin</code></li>
         </ul>
-        <p class="note">วางไฟล์ dash35.bin ที่รากการ์ด (ไม่ใส่ในโฟลเดอร์) ใช้กับจอ 3.5" เท่านั้น</p>
+        <p class="note">วางไฟล์ dash35.bin ที่รากการ์ด ใช้กับบอร์ด ES3C35P เท่านั้น</p>
+      </article>
+      <article class="card" id="fwjc35">
+        <div class="size">3.5<small>นิ้ว</small></div>
+        <h3>เกจจอ 3.5" IPS OBD2</h3>
+        <p class="board">Guition JC3248W535 · ESP32-S3</p>
+        <p class="ver"><b data-ver="jc35">…</b><span>รุ่นล่าสุด</span></p>
+        <a class="btn" href="dashjc35.bin" download="dashjc35.bin">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
+          ดาวน์โหลด dashjc35.bin
+        </a>
+        <ul class="meta">
+          <li><span>ไฟล์</span><code>dashjc35-<span data-ver="jc35">…</span>.bin</code></li>
+          <li><span>ชื่อในการ์ด SD</span><code>dashjc35.bin</code></li>
+        </ul>
+        <p class="note">วางไฟล์ dashjc35.bin ที่รากการ์ด ใช้กับบอร์ด JC3248W535 เท่านั้น (คนละไฟล์กับ ES3C35P)</p>
       </article>
     </div>
 
-    <div class="warn"><b>ใช้ไฟล์ให้ตรงรุ่นจอ</b> — ไฟล์ของจอ 2.8" และ 3.5" ใช้แทนกันไม่ได้ จอ 3.5" ตรวจชนิดชิปก่อนแฟลชและจะไม่ยอมแฟลชไฟล์ของจอ 2.8"</div>
+    <h2 class="group">เกจ MaxxECU <span>รับค่าจากกล่อง MaxxECU ทางสาย CAN โดยตรง</span></h2>
+    <div class="cards">
+      <article class="card" id="fwm28">
+        <div class="size">2.8<small>นิ้ว</small></div>
+        <h3>เกจจอ 2.8" MaxxECU</h3>
+        <p class="board">ESP32-2432S028R · CAN bus</p>
+        <p class="ver"><b data-ver="m28">…</b><span>รุ่นล่าสุด</span></p>
+        <a class="btn" href="maxx28.bin" download="maxx28.bin">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
+          ดาวน์โหลด maxx28.bin
+        </a>
+        <ul class="meta">
+          <li><span>ไฟล์</span><code>maxx28-<span data-ver="m28">…</span>.bin</code></li>
+          <li><span>ชื่อในการ์ด SD</span><code>maxx28.bin</code></li>
+        </ul>
+        <p class="note">วางไฟล์ maxx28.bin ที่รากการ์ด ใช้กับเกจรุ่น MaxxECU เท่านั้น</p>
+      </article>
+      <article class="card" id="fwm35">
+        <div class="size">3.5<small>นิ้ว</small></div>
+        <h3>เกจจอ 3.5" MaxxECU</h3>
+        <p class="board">ES3C35P · ESP32-S3 · CAN bus</p>
+        <p class="ver"><b data-ver="m35">…</b><span>รุ่นล่าสุด</span></p>
+        <a class="btn" href="maxx35.bin" download="maxx35.bin">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
+          ดาวน์โหลด maxx35.bin
+        </a>
+        <ul class="meta">
+          <li><span>ไฟล์</span><code>maxx35-<span data-ver="m35">…</span>.bin</code></li>
+          <li><span>ชื่อในการ์ด SD</span><code>maxx35.bin</code></li>
+        </ul>
+        <p class="note">วางไฟล์ maxx35.bin ที่รากการ์ด ใช้กับบอร์ด ES3C35P รุ่น MaxxECU เท่านั้น</p>
+      </article>
+      <article class="card" id="fwmjc35">
+        <div class="size">3.5<small>นิ้ว</small></div>
+        <h3>เกจจอ 3.5" MaxxECU</h3>
+        <p class="board">Guition JC3248W535 · ESP32-S3 · CAN bus</p>
+        <p class="ver"><b data-ver="mjc35">…</b><span>รุ่นล่าสุด</span></p>
+        <a class="btn" href="maxxjc35.bin" download="maxxjc35.bin">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
+          ดาวน์โหลด maxxjc35.bin
+        </a>
+        <ul class="meta">
+          <li><span>ไฟล์</span><code>maxxjc35-<span data-ver="mjc35">…</span>.bin</code></li>
+          <li><span>ชื่อในการ์ด SD</span><code>maxxjc35.bin</code></li>
+        </ul>
+        <p class="note">วางไฟล์ maxxjc35.bin ที่รากการ์ด ใช้กับบอร์ด JC3248W535 รุ่น MaxxECU เท่านั้น</p>
+      </article>
+      <article class="card hot" id="fwm7">
+        <div class="size">7<small>นิ้ว</small></div>
+        <h3>เกจจอ 7" MaxxECU</h3>
+        <p class="board">Waveshare ESP32-P4 · 1024 × 600 · CAN bus</p>
+        <p class="ver"><b data-ver="m7">…</b><span>รุ่นล่าสุด</span></p>
+        <a class="btn" href="maxx7.bin" download="maxx7.bin">
+          <svg viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7.5 11.5L12 16l4.5-4.5"/><path d="M5 20h14"/></svg>
+          ดาวน์โหลด maxx7.bin
+        </a>
+        <ul class="meta">
+          <li><span>ไฟล์</span><code>maxx7-<span data-ver="m7">…</span>.bin</code></li>
+          <li><span>ติดตั้ง</span><code>ผ่าน Wi-Fi</code></li>
+        </ul>
+        <p class="note">เกจจอ 7" ไม่ใช้การ์ด SD อัพเดทผ่าน Wi-Fi ที่หน้า SETTINGS &gt; FIRMWARE ไฟล์นี้สำหรับร้านที่แฟลชผ่าน USB</p>
+      </article>
+    </div>
+
+    <div class="warn"><b>ใช้ไฟล์ให้ตรงรุ่นจอและรุ่นเกจ</b> — แต่ละเกจหาไฟล์ชื่อของตัวเองในการ์ด SD และโหลดจากเว็บเฉพาะไฟล์ของตัวเอง ไฟล์ของรุ่นอื่นจึงไม่ถูกติดตั้ง
+      จอ 3.5" มีสองบอร์ด ดูชื่อบอร์ดที่ด้านหลังจอ (ES3C35P หรือ JC3248W535) แล้วเลือกการ์ดให้ตรง เกจ OBD2 กับเกจ MaxxECU ก็ใช้ไฟล์แทนกันไม่ได้</div>
 
     <section>
       <h2>วิธีติดตั้ง</h2>
@@ -144,7 +227,7 @@
         <div>
           <h3 style="margin:0 0 16px">แฟลชจากการ์ด SD</h3>
           <ol>
-            <li>ดาวน์โหลดไฟล์ของจอที่ใช้อยู่จากด้านบน</li>
+            <li>ดาวน์โหลดไฟล์ของจอและรุ่นเกจที่ใช้อยู่จากด้านบน (จอ 7" ไม่ใช้การ์ด SD ใช้วิธีด้านขวา)</li>
             <li>คัดลอกไฟล์ไปที่รากการ์ด microSD</li>
             <li>เสียบการ์ดเข้าเกจ เปิดเครื่อง ปัดไปหน้า SYSTEM แล้วแตะ FIRMWARE</li>
             <li>แถว On SD card ขึ้นเลขรุ่น กด INSTALL แล้วกด INSTALL NOW ในหน้ายืนยัน อย่าปิดไฟจนกว่าจะรีบูต</li>
@@ -154,8 +237,8 @@
           <h3 style="margin:0 0 16px">ให้เกจโหลดเอง</h3>
           <ol>
             <li>ต่อ WiFi ที่มีอินเทอร์เน็ตจากหน้า CONNECTION (เลือกเครือข่าย ใส่รหัสผ่าน แล้วกด Connect)</li>
-            <li>ไปที่ SYSTEM &gt; FIRMWARE รอให้แถว Available online ขึ้นเลขรุ่น</li>
-            <li>กด DOWNLOAD เกจจะเก็บไฟล์ลงการ์ด SD (ต้องมีการ์ดใส่อยู่)</li>
+            <li>ไปที่ SYSTEM &gt; FIRMWARE (จอ 7": SETTINGS &gt; FIRMWARE) รอให้แถว Available online ขึ้นเลขรุ่น</li>
+            <li>กด DOWNLOAD เกจจะเก็บไฟล์ลงการ์ด SD (ต้องมีการ์ดใส่อยู่ จอ 7" เขียนลงเครื่องเลยไม่ต้องใช้การ์ด)</li>
             <li>กด INSTALL แล้วกด INSTALL NOW ในหน้ายืนยัน อย่าปิดไฟจนกว่าจะรีบูต</li>
           </ol>
         </div>
@@ -172,7 +255,8 @@
 
   <script>
     // Show the version the update server reports for each board.
-    [["28", "health28.txt"], ["35", "health35.txt"]].forEach(function (p) {
+    [["28", "health28.txt"], ["35", "health35.txt"], ["jc35", "healthjc35.txt"], ["m28", "healthmaxx28.txt"],
+     ["m35", "healthmaxx35.txt"], ["mjc35", "healthmaxxjc35.txt"], ["m7", "healthmaxx7.txt"]].forEach(function (p) {
       fetch(p[1] + "?t=" + Date.now()).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
         var m = /^ok\s+(\S+)/.exec(t.trim());
         if (m) document.querySelectorAll('[data-ver="' + p[0] + '"]').forEach(function (n) { n.textContent = m[1]; });

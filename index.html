@@ -159,7 +159,11 @@
     figcaption { margin-top: 12px; font-size: 14px; color: var(--muted); }
     figcaption b { color: #fff; display: block; font-size: 15px; font-weight: 600; margin-bottom: 2px; }
 
-    .models { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .models { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+    .gallery7 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+    .sub-head { margin: 46px 0 6px; }
+    .sub-head h3 { font-size: 22px; margin: 10px 0 6px; }
+    .sub-head p { color: var(--muted); margin: 0; max-width: 46rem; }
     .model {
       border: 1px solid var(--line2); border-radius: 22px; padding: 30px; position: relative; overflow: hidden;
       background: linear-gradient(165deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
@@ -234,6 +238,7 @@
     @media (max-width: 1000px) {
       .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .models { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .hero .wrap, .split { grid-template-columns: minmax(0, 1fr); }
       .device { transform: none; }
     }
@@ -249,7 +254,7 @@
       .stat:nth-child(2) { border-right: 0; } .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
     }
     @media (max-width: 560px) {
-      .features, .gallery { grid-template-columns: minmax(0, 1fr); }
+      .features, .gallery, .gallery7 { grid-template-columns: minmax(0, 1fr); }
       .btn { width: 100%; } .cta .btn { flex: 1 1 100%; }
       .model { padding: 24px 20px; }
     }
@@ -294,7 +299,7 @@
           </div>
           <div class="trust">
             <span>ไร้สาย ไม่ต้องเดินสายเพิ่ม</span>
-            <span>จอสัมผัส 2 ขนาด</span>
+            <span>จอสัมผัส 3 ขนาด</span>
             <span>อัพเดทเฟิร์มแวร์ผ่านเว็บ</span>
           </div>
         </div>
@@ -308,7 +313,7 @@
       <div class="wrap">
         <div class="stat"><b>25</b><span>ค่าให้เลือกแสดงบนจอ</span></div>
         <div class="stat"><b>6</b><span>หน้าจอ ปัดเปลี่ยนหน้า</span></div>
-        <div class="stat"><b>2</b><span>ขนาดจอ 2.8" และ 3.5"</span></div>
+        <div class="stat"><b>3</b><span>ขนาดจอ 2.8" 3.5" และ 7"</span></div>
         <div class="stat"><b>OTA</b><span>อัพเดทผ่านเว็บหรือการ์ด SD</span></div>
       </div>
     </div>
@@ -449,6 +454,18 @@
           <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash35-logs.png" width="480" height="320" alt="หน้า DRIVE LOGS จอ 3.5 นิ้ว"></div>
             <figcaption><b>DRIVE LOGS</b>เปิดไฟล์ล็อกในการ์ด SD ดูกราฟรอบ ความเร็ว น้ำ และค่าต่ำสุด เฉลี่ย สูงสุด บนเกจได้เลย</figcaption></figure>
         </div>
+
+        <div class="sub-head reveal">
+          <span class="eyebrow">7" MaxxECU</span>
+          <h3>เกจจอ 7" สำหรับรถที่ใช้กล่อง MaxxECU</h3>
+          <p>จอ 1024 × 600 รับค่าจากกล่อง MaxxECU ทางสาย CAN โดยตรง มีสองแบบหน้าจอให้เลือก (ค่าในภาพเป็นตัวอย่าง)</p>
+        </div>
+        <div class="gallery7">
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash7-gauge.png" width="1024" height="600" alt="หน้าจอเกจ 7 นิ้ว แบบเข็มวัดรอบ"></div>
+            <figcaption><b>แบบเข็มวัดรอบ</b>เข็มรอบเครื่องวงใหญ่กลางจอ เกียร์ตัวโตตรงกลาง ค่าอื่นเรียงสองข้าง 8 ช่อง และ TPS ความเร็ว บูสต์ในช่องเล็ก</figcaption></figure>
+          <figure class="reveal"><div class="shot"><img loading="lazy" src="img/dash7-bar.png" width="1024" height="600" alt="หน้าจอเกจ 7 นิ้ว แบบแถบไฟเปลี่ยนเกียร์"></div>
+            <figcaption><b>แบบแถบไฟเปลี่ยนเกียร์</b>แถบรอบเครื่องเต็มความกว้างพร้อมไฟเตือนเปลี่ยนเกียร์ ตัวเลขรอบและเกียร์ใหญ่กลางจอ ค่าอื่น 8 ช่องรอบ ๆ</figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -458,7 +475,7 @@
         <div class="sec-head reveal">
           <span class="eyebrow">Models</span>
           <h2>เลือกขนาดจอที่ใช่</h2>
-          <p>ทำงานเหมือนกันทั้งสองรุ่น ต่างกันที่ขนาดจอและชิป สอบถามราคาและสต็อกได้ที่ช่องทางติดต่อด้านล่าง</p>
+          <p>จอ 2.8" และ 3.5" มีทั้งรุ่น OBD2 (ใช้ได้กับรถทั่วไป) และรุ่น MaxxECU (ต่อกล่อง MaxxECU ทางสาย CAN) จอ 7" เป็นรุ่น MaxxECU สอบถามราคาและสต็อกได้ที่ช่องทางติดต่อด้านล่าง</p>
         </div>
         <div class="models">
           <article class="model reveal">
@@ -484,7 +501,7 @@
             <h3>เกจจอ 3.5" IPS — จอใหญ่ ชัดกว่า</h3>
             <p class="sub">จอ IPS มุมมองกว้าง ชิป ESP32-S3 แรงกว่า</p>
             <table class="spec">
-              <tr><th>บอร์ด</th><td>ES3C35P (ESP32-S3, 16 MB flash)</td></tr>
+              <tr><th>บอร์ด</th><td>ES3C35P หรือ Guition JC3248W535 (ESP32-S3, 16 MB flash)</td></tr>
               <tr><th>จอ / ความละเอียด</th><td>IPS 480 × 320 (แนวนอน)</td></tr>
               <tr><th>การควบคุม</th><td>จอสัมผัสแบบ capacitive ปัดลื่น</td></tr>
               <tr><th>เชื่อมต่อรถ</th><td>ELM327 ผ่าน WiFi หรือ BLE</td></tr>
@@ -494,6 +511,24 @@
             <div class="btns">
               <a class="btn primary small" href="#contact">สอบถามรุ่นนี้</a>
               <a class="btn ghost small" href="download.html#fw35">ดาวน์โหลดเฟิร์มแวร์</a>
+            </div>
+          </article>
+          <article class="model reveal">
+            <span class="tag">MaxxECU</span>
+            <div class="size">7<small>นิ้ว</small></div>
+            <h3>เกจจอ 7" — สำหรับ MaxxECU</h3>
+            <p class="sub">จอใหญ่สุด เข็มวัดรอบหรือแถบไฟเปลี่ยนเกียร์ ค่ารอบจอ 8 ช่อง</p>
+            <table class="spec">
+              <tr><th>บอร์ด</th><td>Waveshare ESP32-P4 (ESP32-P4, 32 MB flash)</td></tr>
+              <tr><th>จอ / ความละเอียด</th><td>IPS 1024 × 600</td></tr>
+              <tr><th>การควบคุม</th><td>จอสัมผัสแบบ capacitive</td></tr>
+              <tr><th>เชื่อมต่อรถ</th><td>สาย CAN จากกล่อง MaxxECU</td></tr>
+              <tr><th>อัพเดท</th><td>ผ่าน Wi-Fi ไม่ต้องใช้การ์ด SD</td></tr>
+              <tr><th>เฟิร์มแวร์ล่าสุด</th><td><span data-ver="m7">…</span></td></tr>
+            </table>
+            <div class="btns">
+              <a class="btn primary small" href="#contact">สอบถามรุ่นนี้</a>
+              <a class="btn ghost small" href="download.html#fwm7">ดาวน์โหลดเฟิร์มแวร์</a>
             </div>
           </article>
         </div>
@@ -574,7 +609,7 @@
 
   <footer>
     <div class="wrap">
-      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.20.3</span> · จอ 3.5" <span data-ver="35">1.0.0</span></div>
+      <div>© R0CKY GAUGES · เฟิร์มแวร์ล่าสุด จอ 2.8" <span data-ver="28">1.20.3</span> · จอ 3.5" <span data-ver="35">1.0.0</span> · จอ 7" MaxxECU <span data-ver="m7">…</span></div>
       <nav><a href="demo.html">สาธิต</a><a href="logviewer.html">LogViewer</a><a href="download.html">ดาวน์โหลดเฟิร์มแวร์</a><a href="#faq">คำถาม</a></nav>
     </div>
   </footer>
@@ -634,7 +669,7 @@
       } else els.forEach(function (el) { el.classList.add("in"); });
 
       // latest firmware versions straight from the update server files
-      [["28", "health28.txt"], ["35", "health35.txt"]].forEach(function (p) {
+      [["28", "health28.txt"], ["35", "health35.txt"], ["m7", "healthmaxx7.txt"]].forEach(function (p) {
         fetch(p[1] + "?t=" + Date.now()).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
           const m = /^ok\s+(\S+)/.exec(t.trim());
           if (m) document.querySelectorAll('[data-ver="' + p[0] + '"]').forEach(function (n) { n.textContent = m[1]; });
